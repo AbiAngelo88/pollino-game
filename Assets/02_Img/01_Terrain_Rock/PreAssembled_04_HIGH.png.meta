@@ -1,0 +1,872 @@
+fileFormatVersion: 2
+guid: 37b456a2941a24e8a863a62616b1ce75
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4968229985953139272
+    second: PreAssembled_04_HIGH_0
+  - first:
+      213: 27432596878191184
+    second: PreAssembled_04_HIGH_1
+  - first:
+      213: 2144792107256087352
+    second: PreAssembled_04_HIGH_2
+  - first:
+      213: 1398941577039830361
+    second: PreAssembled_04_HIGH_3
+  - first:
+      213: -4396283996321667443
+    second: PreAssembled_04_HIGH_4
+  - first:
+      213: 6755584297132824262
+    second: PreAssembled_04_HIGH_5
+  - first:
+      213: -8271416226531806469
+    second: PreAssembled_04_HIGH_6
+  - first:
+      213: 6160907238312735920
+    second: PreAssembled_04_HIGH_7
+  - first:
+      213: 7222515638008589320
+    second: PreAssembled_04_HIGH_8
+  - first:
+      213: -3833446272461754466
+    second: PreAssembled_04_HIGH_9
+  - first:
+      213: 3246013539213368412
+    second: PreAssembled_04_HIGH_10
+  - first:
+      213: 56645078504495565
+    second: PreAssembled_04_HIGH_11
+  - first:
+      213: -4341573417901494876
+    second: PreAssembled_04_HIGH_12
+  - first:
+      213: 5057651128208871386
+    second: PreAssembled_04_HIGH_13
+  - first:
+      213: 1208901997918680920
+    second: PreAssembled_04_HIGH_14
+  - first:
+      213: -2835426236576566331
+    second: PreAssembled_04_HIGH_15
+  - first:
+      213: 3194602814695974514
+    second: PreAssembled_04_HIGH_16
+  - first:
+      213: 8279798335405998704
+    second: PreAssembled_04_HIGH_17
+  - first:
+      213: -6429901462219885661
+    second: PreAssembled_04_HIGH_18
+  - first:
+      213: -1680685927426319472
+    second: PreAssembled_04_HIGH_19
+  - first:
+      213: -176283844876594408
+    second: PreAssembled_04_HIGH_20
+  - first:
+      213: 5512039942107509386
+    second: PreAssembled_04_HIGH_21
+  - first:
+      213: 3284907284829375609
+    second: PreAssembled_04_HIGH_22
+  - first:
+      213: -9096505171705157528
+    second: PreAssembled_04_HIGH_23
+  - first:
+      213: 6645168790324417274
+    second: PreAssembled_04_HIGH_24
+  - first:
+      213: -9193886896817888298
+    second: PreAssembled_04_HIGH_25
+  - first:
+      213: -2889988470890250984
+    second: PreAssembled_04_HIGH_26
+  - first:
+      213: 8456570442704347290
+    second: PreAssembled_04_HIGH_27
+  - first:
+      213: 4517061726196547406
+    second: PreAssembled_04_HIGH_28
+  - first:
+      213: -5841778606835412061
+    second: PreAssembled_04_HIGH_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 2429
+        width: 1586
+        height: 1667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5b1dc862d4d0bb0800000000000000
+      internalID: -4968229985953139272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_1
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 3090
+        width: 38
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ae0303dc5716000800000000000000
+      internalID: 27432596878191184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_2
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 3034
+        width: 2339
+        height: 1043
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8338f06de05d3cd10800000000000000
+      internalID: 2144792107256087352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_3
+      rect:
+        serializedVersion: 2
+        x: 3402
+        y: 3032
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ddbf0d3f90a6310800000000000000
+      internalID: 1398941577039830361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_4
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 2740
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8623837ff24df2c0800000000000000
+      internalID: -4396283996321667443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_5
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 2157
+        width: 2368
+        height: 853
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c61fc82028a0cd50800000000000000
+      internalID: 6755584297132824262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_6
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 2734
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf27b2c04c6063d80800000000000000
+      internalID: -8271416226531806469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_7
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 2478
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b473c9cd70ff7550800000000000000
+      internalID: 6160907238312735920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_8
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 2408
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ca43cc4b78b3460800000000000000
+      internalID: 7222515638008589320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_9
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1077
+        width: 1346
+        height: 1309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f2f58fcecdccac0800000000000000
+      internalID: -3833446272461754466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_10
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 1219
+        width: 2114
+        height: 897
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5cdbe4ad182c0d20800000000000000
+      internalID: 3246013539213368412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_11
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 1200
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9d886166e39c000800000000000000
+      internalID: 56645078504495565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_12
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 1186
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ade3b3aaf1afb3c0800000000000000
+      internalID: -4341573417901494876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_13
+      rect:
+        serializedVersion: 2
+        x: 2444
+        y: 1100
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf4ebe87e2603640800000000000000
+      internalID: 5057651128208871386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_14
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 1102
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857f33a46f1e6c010800000000000000
+      internalID: 1208901997918680920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_15
+      rect:
+        serializedVersion: 2
+        x: 2588
+        y: 1086
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3f70e4cda86a8d0800000000000000
+      internalID: -2835426236576566331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_16
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 0
+        width: 1326
+        height: 1049
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276aa609552855c20800000000000000
+      internalID: 3194602814695974514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_17
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 898
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072ceb1c7b0c7e270800000000000000
+      internalID: 8279798335405998704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_18
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 901
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a37e9befa664c6a0800000000000000
+      internalID: -6429901462219885661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_19
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 91
+        width: 1982
+        height: 1007
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b91ccbd010da8e0800000000000000
+      internalID: -1680685927426319472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_20
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 880
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8139d7ee6c6bd8df0800000000000000
+      internalID: -176283844876594408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_21
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 844
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8235119f13be7c40800000000000000
+      internalID: 5512039942107509386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_22
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 827
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c095875c5569d20800000000000000
+      internalID: 3284907284829375609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_23
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 816
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868a20fddb8b2c180800000000000000
+      internalID: -9096505171705157528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_24
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 812
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af29cc3aec1683c50800000000000000
+      internalID: 6645168790324417274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_25
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 800
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d32d022490c86080800000000000000
+      internalID: -9193886896817888298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_26
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 800
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81dbc9b2cc2b4e7d0800000000000000
+      internalID: -2889988470890250984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_27
+      rect:
+        serializedVersion: 2
+        x: 1814
+        y: 756
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90e5774306cb5570800000000000000
+      internalID: 8456570442704347290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_28
+      rect:
+        serializedVersion: 2
+        x: 3808
+        y: 621
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f357225b3dfae30800000000000000
+      internalID: 4517061726196547406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PreAssembled_04_HIGH_29
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 294
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a35913ee45ddeea0800000000000000
+      internalID: -5841778606835412061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

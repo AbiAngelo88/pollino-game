@@ -1,0 +1,1544 @@
+fileFormatVersion: 2
+guid: 321c8bc850a8a4821b14b09d963aadaf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 434983079849497037
+    second: rocks plants and props_0
+  - first:
+      213: -8452074375689376151
+    second: rocks plants and props_1
+  - first:
+      213: 2153238332398745226
+    second: rocks plants and props_2
+  - first:
+      213: -1871373681074572389
+    second: rocks plants and props_3
+  - first:
+      213: -1965715609714974477
+    second: rocks plants and props_4
+  - first:
+      213: -6080877682190824390
+    second: rocks plants and props_5
+  - first:
+      213: 2846025810358991537
+    second: rocks plants and props_6
+  - first:
+      213: 7017965047107649817
+    second: rocks plants and props_7
+  - first:
+      213: 8486318361921502692
+    second: rocks plants and props_8
+  - first:
+      213: 3003348487654910774
+    second: rocks plants and props_9
+  - first:
+      213: 7734573720180362080
+    second: rocks plants and props_10
+  - first:
+      213: -4848599317673669302
+    second: rocks plants and props_11
+  - first:
+      213: -7469901119185597528
+    second: rocks plants and props_12
+  - first:
+      213: -8993890253968265703
+    second: rocks plants and props_13
+  - first:
+      213: -7287147942605864398
+    second: rocks plants and props_14
+  - first:
+      213: -1597644993310012900
+    second: rocks plants and props_15
+  - first:
+      213: -2958412968597182504
+    second: rocks plants and props_16
+  - first:
+      213: -14921966457554086
+    second: rocks plants and props_17
+  - first:
+      213: 6417722589448907263
+    second: rocks plants and props_18
+  - first:
+      213: -4341092455168427683
+    second: rocks plants and props_19
+  - first:
+      213: 7383469129787416015
+    second: rocks plants and props_20
+  - first:
+      213: 7792337189925154320
+    second: rocks plants and props_21
+  - first:
+      213: 427994151983406584
+    second: rocks plants and props_22
+  - first:
+      213: 7535695324878462359
+    second: rocks plants and props_23
+  - first:
+      213: 1161163615890547270
+    second: rocks plants and props_24
+  - first:
+      213: 8270943090005100332
+    second: rocks plants and props_25
+  - first:
+      213: 5123328045282505264
+    second: rocks plants and props_26
+  - first:
+      213: -1692316518367493464
+    second: rocks plants and props_27
+  - first:
+      213: -4833458622639660973
+    second: rocks plants and props_28
+  - first:
+      213: -6834283136201973696
+    second: rocks plants and props_29
+  - first:
+      213: -3633499562379036671
+    second: rocks plants and props_30
+  - first:
+      213: -2461454725958613099
+    second: rocks plants and props_31
+  - first:
+      213: 1827881663898755134
+    second: rocks plants and props_32
+  - first:
+      213: 1778390892439295150
+    second: rocks plants and props_33
+  - first:
+      213: -1985462380237125881
+    second: rocks plants and props_34
+  - first:
+      213: 3999049150361739375
+    second: rocks plants and props_35
+  - first:
+      213: -7126596151421145183
+    second: rocks plants and props_36
+  - first:
+      213: -4285458604839669084
+    second: rocks plants and props_37
+  - first:
+      213: -4486304897077332293
+    second: rocks plants and props_38
+  - first:
+      213: 3869486073760540100
+    second: rocks plants and props_39
+  - first:
+      213: 1067602114065694930
+    second: rocks plants and props_40
+  - first:
+      213: 5225274964199333075
+    second: rocks plants and props_41
+  - first:
+      213: -7586524240695530185
+    second: rocks plants and props_42
+  - first:
+      213: 6445188760913257356
+    second: rocks plants and props_43
+  - first:
+      213: 4429698110621166849
+    second: rocks plants and props_44
+  - first:
+      213: -2498824302148695460
+    second: rocks plants and props_45
+  - first:
+      213: 4007563462561783247
+    second: rocks plants and props_46
+  - first:
+      213: 3243803708353246344
+    second: rocks plants and props_47
+  - first:
+      213: 5256103761021243952
+    second: rocks plants and props_48
+  - first:
+      213: -1521362467359392866
+    second: rocks plants and props_49
+  - first:
+      213: 4343005354073790275
+    second: rocks plants and props_50
+  - first:
+      213: 6916705538050147669
+    second: rocks plants and props_51
+  - first:
+      213: 3707004148199460070
+    second: rocks plants and props_52
+  - first:
+      213: 644915567451523300
+    second: rocks plants and props_53
+  - first:
+      213: -10108487567047803
+    second: rocks plants and props_54
+  - first:
+      213: -3056392136990952058
+    second: rocks plants and props_55
+  - first:
+      213: 2370155223495891789
+    second: rocks plants and props_56
+  - first:
+      213: 5420573589423776132
+    second: rocks plants and props_57
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rocks plants and props_0
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 3572
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc11cb57ece590600800000000000000
+      internalID: 434983079849497037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_1
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 3509
+        width: 138
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e6ad5e22334ba80800000000000000
+      internalID: -8452074375689376151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_2
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 3572
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86b16fdad6d1ed10800000000000000
+      internalID: 2153238332398745226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_3
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 3509
+        width: 146
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93f8815d8b8706e0800000000000000
+      internalID: -1871373681074572389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_4
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 3509
+        width: 140
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0af79511068b4e0800000000000000
+      internalID: -1965715609714974477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_5
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 3509
+        width: 68
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c4a6647f16c9ba0800000000000000
+      internalID: -6080877682190824390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_6
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 3483
+        width: 68
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba7a08456d1f7720800000000000000
+      internalID: 2846025810358991537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_7
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 3559
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91185fe0702d46160800000000000000
+      internalID: 7017965047107649817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_8
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 3539
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edb435769575c570800000000000000
+      internalID: 8486318361921502692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_9
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 3095
+        width: 550
+        height: 508
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ba06f79890ea920800000000000000
+      internalID: 3003348487654910774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_10
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 3411
+        width: 140
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b0c68a1d9b65b60800000000000000
+      internalID: 7734573720180362080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_11
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 3149
+        width: 473
+        height: 624
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d0cdb0c9056bcb0800000000000000
+      internalID: -4848599317673669302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_12
+      rect:
+        serializedVersion: 2
+        x: 2851
+        y: 3403
+        width: 56
+        height: 370
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab46a36284955890800000000000000
+      internalID: -7469901119185597528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_13
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 3555
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91eaf5737784f2380800000000000000
+      internalID: -8993890253968265703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_14
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 3527
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232424f1e89deda90800000000000000
+      internalID: -7287147942605864398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_15
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 3495
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a4390e75604d9e0800000000000000
+      internalID: -1597644993310012900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_16
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 3355
+        width: 144
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d72bd3541b91f6d0800000000000000
+      internalID: -2958412968597182504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_17
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3373
+        width: 140
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b72f1fc8cfacff0800000000000000
+      internalID: -14921966457554086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_18
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 3365
+        width: 142
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff92a1b41b4501950800000000000000
+      internalID: 6417722589448907263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_19
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 3371
+        width: 88
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59be80896751c3c0800000000000000
+      internalID: -4341092455168427683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_20
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 3347
+        width: 88
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd9a03ed0a577660800000000000000
+      internalID: 7383469129787416015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_21
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 3345
+        width: 62
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01eed8f7361f32c60800000000000000
+      internalID: 7792337189925154320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_22
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 3355
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd5ae2e96a80f500800000000000000
+      internalID: 427994151983406584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_23
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 3347
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79dd3fed8fa249860800000000000000
+      internalID: 7535695324878462359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_24
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 3351
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642a34318284d1010800000000000000
+      internalID: 1161163615890547270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_25
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 3333
+        width: 62
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27c9354bea48c270800000000000000
+      internalID: 8270943090005100332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_26
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 3370
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0323cde66b7b91740800000000000000
+      internalID: 5123328045282505264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_27
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 3371
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a20e23c71fa388e0800000000000000
+      internalID: -1692316518367493464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_28
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 3331
+        width: 92
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350a301ddfa1cecb0800000000000000
+      internalID: -4833458622639660973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_29
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 3331
+        width: 94
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0402d3c72bfb721a0800000000000000
+      internalID: -6834283136201973696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_30
+      rect:
+        serializedVersion: 2
+        x: 2795
+        y: 2897
+        width: 166
+        height: 424
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1083cdc2667339dc0800000000000000
+      internalID: -3633499562379036671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_31
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 2330
+        width: 464
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597c784d7f727ddd0800000000000000
+      internalID: -2461454725958613099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_32
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 2331
+        width: 762
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30a22450b0fd5910800000000000000
+      internalID: 1827881663898755134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_33
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 2365
+        width: 308
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea452a7281d1ea810800000000000000
+      internalID: 1778390892439295150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_34
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 2365
+        width: 367
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707801f0c783274e0800000000000000
+      internalID: -1985462380237125881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_35
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 2356
+        width: 625
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60a3aea30a7f7730800000000000000
+      internalID: 3999049150361739375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_36
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 1334
+        width: 1651
+        height: 1197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af60e00f8e391d90800000000000000
+      internalID: -7126596151421145183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_37
+      rect:
+        serializedVersion: 2
+        x: 2654
+        y: 2349
+        width: 549
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2f3eeaa1ef684c0800000000000000
+      internalID: -4285458604839669084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_38
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1236
+        width: 2007
+        height: 953
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb63c9f27717db1c0800000000000000
+      internalID: -4486304897077332293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_39
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 2105
+        width: 458
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c561d9251d23b530800000000000000
+      internalID: 3869486073760540100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_40
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 2109
+        width: 190
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d087526772e0de00800000000000000
+      internalID: 1067602114065694930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_41
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 2125
+        width: 146
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcd7de25e7e38840800000000000000
+      internalID: 5225274964199333075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_42
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 701
+        width: 472
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73de371f56047b690800000000000000
+      internalID: -7586524240695530185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_43
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 806
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c83239ca709e17950800000000000000
+      internalID: 6445188760913257356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_44
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 731
+        width: 362
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d2bc946f2797d30800000000000000
+      internalID: 4429698110621166849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_45
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 739
+        width: 283
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a405a5984625dd0800000000000000
+      internalID: -2498824302148695460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_46
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 416
+        width: 495
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 9, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd54d87cb9bd9730800000000000000
+      internalID: 4007563462561783247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_47
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 753
+        width: 564
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8847d7d494e440d20800000000000000
+      internalID: 3243803708353246344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_48
+      rect:
+        serializedVersion: 2
+        x: 3215
+        y: 471
+        width: 448
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032144ac58e61f840800000000000000
+      internalID: 5256103761021243952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_49
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 799
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b7e6e75e803eae0800000000000000
+      internalID: -1521362467359392866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_50
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 385
+        width: 254
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347103bfb54754c30800000000000000
+      internalID: 4343005354073790275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_51
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 491
+        width: 464
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 21, y: 0, z: 0, w: 32}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555c4736a031dff50800000000000000
+      internalID: 6916705538050147669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_52
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 595
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec045ad1ace17330800000000000000
+      internalID: 3707004148199460070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_53
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 385
+        width: 472
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8411caa4333f800800000000000000
+      internalID: 644915567451523300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_54
+      rect:
+        serializedVersion: 2
+        x: 2572
+        y: 414
+        width: 311
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583895552661cdff0800000000000000
+      internalID: -10108487567047803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_55
+      rect:
+        serializedVersion: 2
+        x: 3661
+        y: 576
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6857b5c7b838595d0800000000000000
+      internalID: -3056392136990952058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_56
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 507
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4b520f3e9b74e020800000000000000
+      internalID: 2370155223495891789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks plants and props_57
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 484
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481e77cc5feb93b40800000000000000
+      internalID: 5420573589423776132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
