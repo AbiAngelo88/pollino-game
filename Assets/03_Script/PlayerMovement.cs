@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Joystick joystick;
-    [SerializeField] private float velocity;
+
+    public delegate void PickedCollectable(GameObject collectable);
+    public static event PickedCollectable PickedCollectableEmitter;
+    [SerializeField] private Joystick joystick;
+    [SerializeField] private float horizontalForce;
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask ground;
     private float horizontalMove;
-    private float verticalMove;
     private bool isJumping = false;
     private Rigidbody2D rb;
     private CapsuleCollider2D coll;
     private Animator anim;
-    private int currentState = 0;
-    // Start is called before the first frame update
+    private PlayerData.PlayerState currentState = PlayerData.PlayerState.Idle;
+    private float zRotation;
+    private bool isCrashed = false;
+    
     void Start()
     {
         UIManager.OnRightBtnTouch += Jump;
@@ -30,47 +34,59 @@ public class PlayerMovement : MonoBehaviour
                 anim = child.GetComponent<Animator>();
             }
         }
-
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        // horizontalMove = joystick.Horizontal;
-        verticalMove = joystick.Vertical;
-        horizontalMove = Input.GetAxisRaw("Horizontal");
+        horizontalMove = joystick.Horizontal;
+        // horizontalMove = Input.GetAxisRaw("Horizontal");
+        if(Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
+
+        zRotation = transform.rotation.eulerAngles.z;
         SetPlayerState();
     }
 
     private void SetPlayerState()
     {
         // Jump
-        if (!coll.IsTouchingLayers(ground))
+        if (zRotation >= 90 && zRotation <= 270 || isCrashed)
+        {
+            isCrashed = true;
+            currentState = PlayerData.PlayerState.Crash;
+        }
+        else if (!coll.IsTouchingLayers(ground))
         {
             if(rb.velocity.y < 0.1f)
             {
-                currentState = 3;
+                currentState = PlayerData.PlayerState.Fall;
             } else
             {
-                currentState = 2;
+                currentState = PlayerData.PlayerState.Jump;
             }
 
         }
         else if (Mathf.Abs(horizontalMove) > 0.1f)
         {
-            currentState = 1;
+            currentState = PlayerData.PlayerState.Run;
         }
         else
         {
-            currentState = 0;
+            currentState = PlayerData.PlayerState.Idle;
         }
 
-        anim.SetInteger("state", currentState);
+        anim.SetInteger("state", currentState.GetHashCode());
     }
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if(!isCrashed)
+        {
+            MovePlayer();
+        }
     }
 
     private void MovePlayer()
@@ -87,12 +103,12 @@ public class PlayerMovement : MonoBehaviour
 
             if (horizontalMove < 0)
             {
-                rb.AddForce(-transform.right * velocity);
+                rb.AddForce(-transform.right * horizontalForce);
                 transform.localScale = new Vector2(-1, 1);
             }
             else
             {
-                rb.AddForce(transform.right * velocity);
+                rb.AddForce(transform.right * horizontalForce);
                 transform.localScale = new Vector2(1, 1);
             }
         } 
@@ -100,10 +116,17 @@ public class PlayerMovement : MonoBehaviour
         {
 
         }
-
-        // rb.velocity = new Vector2(horizontalMove * velocity, rb.velocity.y); 
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Collectable")
+        {
+            PickedCollectableEmitter?.Invoke(collision.gameObject);
+            Debug.Log("Collected");
+        }
+    }
 
     public void Jump()
     {
