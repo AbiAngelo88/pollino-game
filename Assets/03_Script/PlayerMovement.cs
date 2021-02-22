@@ -11,20 +11,37 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float horizontalForce;
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask ground;
+    [SerializeField] private GameObject frontWheel;
+    [SerializeField] private GameObject backWheel;
+
+
     private float horizontalMove;
     private bool isJumping = false;
     private Rigidbody2D rb;
-    private CapsuleCollider2D coll;
+    private PolygonCollider2D coll;
+    private CapsuleCollider2D triggerCollider;
+    private CircleCollider2D frontWheelCollider;
+    private CircleCollider2D backWheelCollider;
+
     private Animator anim;
     private PlayerData.PlayerState currentState = PlayerData.PlayerState.Idle;
     private float zRotation;
     private bool isCrashed = false;
-    
+
+    private float distToGroundFrontWheel;
+    private float distToGroundBackWheel;
+
     void Start()
     {
         UIManager.OnRightBtnTouch += Jump;
         rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<CapsuleCollider2D>();
+        coll = GetComponent<PolygonCollider2D>();
+        triggerCollider = GetComponent<CapsuleCollider2D>();
+        frontWheelCollider = frontWheel.GetComponent<CircleCollider2D>();
+        distToGroundFrontWheel = frontWheelCollider.bounds.extents.y;
+        backWheelCollider = backWheel.GetComponent<CircleCollider2D>();
+        distToGroundBackWheel = backWheelCollider.bounds.extents.y;
+
         Transform childTransform = transform.GetChild(0);
         if (childTransform)
         {
@@ -58,11 +75,13 @@ public class PlayerMovement : MonoBehaviour
             isCrashed = true;
             currentState = PlayerData.PlayerState.Crash;
         }
-        else if (!coll.IsTouchingLayers(ground))
+        else if (!IsTouchingGround() && !triggerCollider.IsTouchingLayers(ground))
         {
             if(rb.velocity.y < 0.1f)
             {
                 currentState = PlayerData.PlayerState.Fall;
+                Debug.Log("FAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALL!");
+              
             } else
             {
                 currentState = PlayerData.PlayerState.Jump;
@@ -79,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anim.SetInteger("state", currentState.GetHashCode());
+        // Debug.Log("CURRENT STATE " + currentState);
     }
 
     private void FixedUpdate()
@@ -98,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
         }
 
-        else if (horizontalMove != 0 && coll.IsTouchingLayers(ground))
+        else if (horizontalMove != 0 && IsTouchingGround())
         {
 
             if (horizontalMove < 0)
@@ -118,6 +138,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private bool IsTouchingGround()
+    {
+        return (backWheelCollider.IsTouchingLayers(ground) || frontWheelCollider.IsTouchingLayers(ground)) ;
+        //return Physics.Raycast(backWheelCollider.transform.position, -Vector3.up, distToGroundBackWheel) || Physics.Raycast(frontWheelCollider.transform.position, -Vector3.up, distToGroundFrontWheel);
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -131,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
     public void Jump()
     {
         Debug.Log("JUMP player");
-        if(coll.IsTouchingLayers(ground))
+        if(IsTouchingGround())
         {
             isJumping = true;
         }
