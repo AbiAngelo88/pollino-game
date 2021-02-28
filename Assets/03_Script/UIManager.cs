@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadLevel(Loader.Scene scene)
+    public static void LoadLevel(Loader.Scene scene)
     {
         Loader.loadScene(scene);
     }
@@ -29,6 +30,18 @@ public class UIManager : MonoBehaviour
     public void PauseGame()
     {
         PauseClickEmitter?.Invoke();
+    }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadMenu()
+    {
+        Time.timeScale = 1f;
+        Loader.loadScene(Loader.Scene.MenuScene);
     }
 
 }

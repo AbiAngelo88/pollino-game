@@ -11,7 +11,10 @@ public class PauseMenuManager : UIManager
     private void Start()
     {
         pauseMenuUI = gameObject.transform.GetChild(0).gameObject;
+        pauseMenuUI.SetActive(false);
+
         PauseClickEmitter += Pause;
+
     }
 
     private void Update()
@@ -45,12 +48,6 @@ public class PauseMenuManager : UIManager
         Time.timeScale = 1f;
         gameIsPaused = false;
         pauseMenuUI.SetActive(false);
-    }
-
-    public void LoadMenu()
-    {
-        Time.timeScale = 1f;
-        Loader.loadScene(Loader.Scene.MenuScene);
     }
 
     private void OnDestroy()

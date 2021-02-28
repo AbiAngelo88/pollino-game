@@ -8,9 +8,10 @@ public class PersistentDataManager : MonoBehaviour
     private PlayerData currentPlayer;
     private AudioSource audioSource;
     [SerializeField] private AudioMixer audioMixer;
-
+    private bool isMobile = false;
 
     public static PersistentDataManager Instance { get; private set; }
+
 
     private void Awake()
     {
@@ -24,6 +25,13 @@ public class PersistentDataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        isMobile = Application.isMobilePlatform;
+
+        Debug.Log("NAME " + SystemInfo.deviceName);
+        Debug.Log("TYPE " + SystemInfo.deviceType);
+        Debug.Log("MODEL " + SystemInfo.deviceModel);
+        Debug.Log("IS MOBILE " + Application.isMobilePlatform);
 
         this.currentPlayer = PlayerSaver.Load();
         OnVolumeChange(currentPlayer.getVolume());
@@ -42,6 +50,11 @@ public class PersistentDataManager : MonoBehaviour
         audioMixer.SetFloat("volume", volume);
     }
 
+    public bool IsMobileDevice()
+    {
+        return this.isMobile;
+    }
+
 
     public PlayerData GetCurrentPlayerData()
     {
@@ -57,6 +70,7 @@ public class PersistentDataManager : MonoBehaviour
     {
         PlayerSaver.OnLoadedPlayer -= OnPlayerDataChange;
         PlayerSaver.OnPlayerSaved -= OnPlayerDataChange;
+        MenuSceneManager.VolumeChangeEmitter -= OnVolumeChange;
     }
 
 }
