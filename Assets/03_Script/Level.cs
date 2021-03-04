@@ -6,78 +6,98 @@ public class Level
 {
 
     public enum Difficulty { Easy, Medium, Hard }
-    public enum LevelID { First, Second }
+    public enum LevelID { Level_01, Second } // Devono essere gli stessi nomi delle scene di gioco
 
     private LevelID code;
     private string desc;
-    private Difficulty difficulty;
     private int collectables;
     private int ecoPoints;
     private bool hasBoss;
+    private List<AI> enemies;
+    private List<AI> friends;
 
     public Level() { }
 
-    public void setCode(LevelID value)
+    public Level(LevelID code, string desc, int collectables, int ecoPoints, bool hasBoss, List<AI> enemies, List<AI> friends)
+    {
+        this.code = code;
+        this.desc = desc;
+        this.collectables = collectables;
+        this.ecoPoints = ecoPoints;
+        this.hasBoss = hasBoss;
+        this.enemies = enemies;
+        this.friends = friends;
+    }
+
+    public List<AI> GetEnemies()
+    {
+        return this.enemies;
+    }
+
+    public void SetEnemies(List<AI> enemies)
+    {
+        this.enemies = enemies;
+    }
+
+    public List<AI> GetFriends()
+    {
+        return this.friends;
+    }
+
+    public void SetFriends(List<AI> friends)
+    {
+        this.friends = friends;
+    }
+
+    public void SetCode(LevelID value)
     {
         this.code = value;
     }
 
-    public LevelID getCode()
+    public LevelID GetCode()
     {
         return this.code;
     }
 
-    public void setDesc(string value)
+    public void SetDesc(string value)
     {
         this.desc = value;
     }
 
-    public string getDesc()
+    public string GetDesc()
     {
         return this.desc;
     }
 
-    public void setDifficulty(Difficulty value)
-    {
-        this.difficulty = value;
-    }
-
-    public Difficulty getDifficulty()
-    {
-        return this.difficulty;
-    }
-
-    public void setCollectables(int value)
+    public void SetCollectables(int value)
     {
         this.collectables = value;
     }
 
-    public int getCollectables()
+    public int GetCollectables()
     {
         return this.collectables;
     }
 
-    public void setEcoPoints(int value)
+    public void SetEcoPoints(int value)
     {
         this.ecoPoints = value;
     }
 
-    public int getEcoPoints()
+    public int GetEcoPoints()
     {
         return this.ecoPoints;
     }
 
-    public void setHasBoss(bool value)
+    public void SetHasBoss(bool value)
     {
         this.hasBoss = value;
     }
 
-    public bool getHasBoss()
+    public bool GetHasBoss()
     {
         return this.hasBoss;
     }
-
-
 }
 
 

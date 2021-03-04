@@ -4,27 +4,41 @@ using UnityEngine;
 
 public class AiManager : MonoBehaviour
 { 
-    [SerializeField] private float initialSpeed;
     [SerializeField] private LayerMask ground;
-    [SerializeField] private float maxDistance;
 
-    private float speed;
+    // Variabili che devono essere settate dall'editor per poter modificare a piacere il movimento
+    [SerializeField] private float speed = 1;
+    [SerializeField] private float maxDistance = 3;
+
     private Vector3 initialPosition;
     private Vector3 direction = Vector3.left;
     private Rigidbody2D rb;
+    private float currentSpeed;
     private bool foundInitialPosition = false;
-    
+    private AI currentAI;
 
+    public void SetAI(AI data)
+    {
+        currentAI = data;
+    }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (currentAI.GetCanFly())
+        {
+            rb.isKinematic = true;
+            foundInitialPosition = true;
+            StartCoroutine(GetDirection());
+        }
+
     }
 
     private IEnumerator GetDirection()
     {
 
-        speed = initialSpeed;
+        currentSpeed = speed;
         while (foundInitialPosition)
         {
             yield return new WaitForFixedUpdate();
@@ -33,17 +47,17 @@ public class AiManager : MonoBehaviour
             {
                 direction = Vector3.left;
                 transform.localScale = new Vector3(-1, 1, 1);
-                speed = 0f;
+                currentSpeed = 0f;
                 yield return new WaitForSeconds(2f);
-                speed = initialSpeed;
+                currentSpeed = speed;
             }
             else if (transform.localPosition.x <= (initialPosition.x - maxDistance))
             {
                 direction = Vector3.right;
                 transform.localScale = new Vector3(1, 1, 1);
-                speed = 0f;
+                currentSpeed = 0f;
                 yield return new WaitForSeconds(2f);
-                speed = initialSpeed;
+                currentSpeed = speed;
 
             } else
             {
@@ -56,7 +70,7 @@ public class AiManager : MonoBehaviour
     {
 
         if (foundInitialPosition)
-            transform.Translate(direction * speed * Time.deltaTime, Space.World);
+            transform.Translate(direction * currentSpeed * Time.deltaTime, Space.World);
         
     }
 
@@ -73,7 +87,5 @@ public class AiManager : MonoBehaviour
             }
         }
     }
-    
-
 
 }

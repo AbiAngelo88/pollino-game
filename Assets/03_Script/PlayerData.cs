@@ -85,7 +85,6 @@ public class PlayerLevel {
     private Level.LevelID level;
     private int collectablesScore;
     private int ecoScore;
-    private bool hasBoss;
     private int record;
     private bool completed;
     private int stars;
@@ -139,16 +138,6 @@ public class PlayerLevel {
     public int getStars()
     {
         return this.stars;
-    }
-
-    public void setHasBoss(bool value)
-    {
-        this.hasBoss = value;
-    }
-
-    public bool getHasBoss()
-    {
-        return this.hasBoss;
     }
 
     public void setCompleted(bool value)
