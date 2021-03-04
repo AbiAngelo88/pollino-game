@@ -29,10 +29,10 @@ public static class Loader
     // Per questio creiamo un oggetto dummy
     private static IEnumerator loadSceneAsync(Scene scene)
     {
-        
-        yield return null;
 
-        
+        loadingProgress = 0f;
+
+        yield return null;
 
         AsyncOperation loadingAsyncOperation = SceneManager.LoadSceneAsync(scene.ToString());
         while (!loadingAsyncOperation.isDone)
@@ -69,9 +69,10 @@ public static class Loader
             dummy.AddComponent<LoadingMonoBehaviour>().StartCoroutine(loadSceneAsync(scene));
         };
 
-        OnLoadScene?.Invoke(scene);
-
-        yield return new WaitForSeconds(transitionDuration);
+        yield return null;
+        // Decommentare se si decide di reinserire il crossfade ad inizio e fine scena
+        // OnLoadScene?.Invoke(scene);
+        // yield return new WaitForSeconds(transitionDuration);
 
         // Si carica la LoadingScene
         SceneManager.LoadScene(Scene.LoadingScene.ToString());
