@@ -17,6 +17,11 @@ public class AiManager : MonoBehaviour
     private bool foundInitialPosition = false;
     private AI currentAI;
 
+    public AI GetAI()
+    {
+        return currentAI;
+    }
+
     public void SetAI(AI data)
     {
         currentAI = data;

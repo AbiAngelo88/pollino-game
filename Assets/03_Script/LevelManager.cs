@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class LevelManager : UIManager
 {
 
     [SerializeField] private TextMeshProUGUI pickedCollectablesText;
+    [SerializeField] private Slider ecoPointsSlider;
     [SerializeField] private GameObject friendsContainer;
     [SerializeField] private GameObject enemiesContainer;
-    //[SerializeField] private GameObject AIPrefab;
     [SerializeField] private GameObject joystick;
     [SerializeField] private GameObject jumpBtn;
     [SerializeField] private GameObject pauseBtn;
@@ -19,7 +20,7 @@ public class LevelManager : UIManager
     public static EndLevel EndLevelEmitter;
 
     private int pickedCollectables = 0;
-    public int ecoPoints = 10;
+    private int ecoPoints = 50;
     private Level currentLevel;
     private Level.Difficulty difficulty;
     
@@ -42,6 +43,8 @@ public class LevelManager : UIManager
 
         // Generiamo le AI nemiche
         GenerateAI(enemiesContainer);
+
+        ecoPointsSlider.value = ecoPoints;
     }
 
     private void SetCurrentLevel()
@@ -147,10 +150,22 @@ public class LevelManager : UIManager
         pickedCollectablesText.text = pickedCollectables.ToString();
     }
 
-    private void OnAICollision(GameObject collectable)
+    private void OnAICollision(GameObject collision)
     {
-        ecoPoints -= 1;
-        //pickedCollectablesText.text = pickedCollectables.ToString();
+        Debug.Log(collision.name);
+
+        // Ottenere l'informazione di che eco malus ha l'AI
+        AiManager aiManager = collision.gameObject.GetComponent<AiManager>();
+        if (aiManager != null)
+        {
+            AI collidedAI = aiManager.GetAI();
+            // Addizionare il valore
+            ecoPoints = ecoPoints - collidedAI.GetBaseDamage();
+            ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= 100 ? 100 : ecoPoints);
+            // Mostrare il valore aggiornato nello slider 
+            Debug.Log("Valore : " + ecoPoints + " valore clamp " + Mathf.Clamp01(ecoPoints/100));
+            ecoPointsSlider.value = ecoPoints;
+        }
     }
     private void OnWinLevel()
     {

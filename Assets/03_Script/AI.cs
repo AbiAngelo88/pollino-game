@@ -8,13 +8,13 @@ public class AI
     private string desc;
     private bool isFriend;
     private bool isEnemy;
-    private float baseDamage;
+    private int baseDamage;
     private bool canFly;
     private string prefabName;
     
     public AI() { }
 
-    public AI(AiCodes code, string desc, bool isFriend, bool isEnemy, float baseDamage, bool canFly, string prefabName)
+    public AI(AiCodes code, string desc, bool isFriend, bool isEnemy, int baseDamage, bool canFly, string prefabName)
     {
         this.code = code;
         this.desc = desc;
@@ -75,12 +75,12 @@ public class AI
         return this.isEnemy;
     }
 
-    public float GetBaseDamage()
+    public int GetBaseDamage()
     {
         return this.baseDamage;
     }
 
-    public void SetBaseDamage(float baseDamage)
+    public void SetBaseDamage(int baseDamage)
     {
         this.baseDamage = baseDamage;
     }
