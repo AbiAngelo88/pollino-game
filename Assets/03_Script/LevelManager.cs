@@ -24,6 +24,8 @@ public class LevelManager : UIManager
     private int ecoPoints = 50;
     private Level currentLevel;
     private Level.Difficulty difficulty;
+
+    private GameObject lastHurtedFriend;
     
 
     private void Awake()
@@ -36,6 +38,7 @@ public class LevelManager : UIManager
         PlayerBodyManager.PickedCollectableEmitter += OnPickedCollectable;
         PlayerBodyManager.WinLevelEmitter += OnWinLevel;
         PlayerBodyManager.DefeatLevelEmitter += RestartLevel;
+        PlayerBodyManager.ClimbOverAIEmitter += OnClimbOverAI;
         PlayerMovement.AICollisionEmitter += OnAICollision;
         ManageCorrectInteractions();
 
@@ -199,8 +202,6 @@ public class LevelManager : UIManager
 
     private void OnAICollision(GameObject collision)
     {
-        Debug.Log(collision.name);
-
         // Ottenere l'informazione di che eco malus ha l'AI
         AiManager aiManager = collision.gameObject.GetComponent<AiManager>();
         if (aiManager != null)
@@ -209,11 +210,35 @@ public class LevelManager : UIManager
             // Addizionare il valore
             ecoPoints = ecoPoints - collidedAI.GetBaseDamage();
             ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= 100 ? 100 : ecoPoints);
-            // Mostrare il valore aggiornato nello slider 
-            Debug.Log("Valore : " + ecoPoints + " valore clamp " + Mathf.Clamp01(ecoPoints/100));
             ecoPointsSlider.value = ecoPoints;
+            lastHurtedFriend = collision;
+            Debug.Log("Destroy " + collision.name + " tra 1 secondo");
+            Destroy(collision.gameObject, 1f);
         }
     }
+
+    private void OnClimbOverAI(GameObject collision)
+    {
+        if(lastHurtedFriend == null || (collision.name != lastHurtedFriend.name))
+        {
+            AiManager hurtedFiend = collision.gameObject.GetComponent<AiManager>();
+            if (hurtedFiend != null)
+            {
+                AI collidedAI = hurtedFiend.GetAI();
+                ecoPoints = ecoPoints + collidedAI.GetBaseDamage() * 2;
+                ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= 100 ? 100 : ecoPoints);
+                ecoPointsSlider.value = ecoPoints;
+            }
+            Debug.Log("BONUS ECO OTTENUTO!");
+        } else
+        {
+            Debug.Log("NIENTE BONUS A STO GIRO!");
+        }
+
+        lastHurtedFriend = null;
+    }
+
+
     private void OnWinLevel()
     {
         Time.timeScale = 0f;
@@ -224,8 +249,9 @@ public class LevelManager : UIManager
         private void OnDestroy()
     {
         PlayerBodyManager.PickedCollectableEmitter -= OnPickedCollectable;
-        PlayerMovement.AICollisionEmitter -= OnAICollision;
         PlayerBodyManager.WinLevelEmitter -= OnWinLevel;
         PlayerBodyManager.DefeatLevelEmitter -= RestartLevel;
+        PlayerBodyManager.ClimbOverAIEmitter -= OnClimbOverAI;
+        PlayerMovement.AICollisionEmitter -= OnAICollision;
     }
 }

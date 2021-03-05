@@ -9,6 +9,9 @@ public class PlayerBodyManager : MonoBehaviour
     public delegate void PickedCollectable(GameObject collectable);
     public static event PickedCollectable PickedCollectableEmitter;
 
+    public delegate void ClimbOverAI(GameObject collectable);
+    public static event ClimbOverAI ClimbOverAIEmitter;
+
     public delegate void WinLevel();
     public static event WinLevel WinLevelEmitter;
 
@@ -31,6 +34,14 @@ public class PlayerBodyManager : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "AI")
+        {
+            ClimbOverAIEmitter?.Invoke(collision.gameObject);
         }
     }
 }

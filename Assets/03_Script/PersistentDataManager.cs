@@ -13,7 +13,7 @@ public class PersistentDataManager : MonoBehaviour
     public static PersistentDataManager Instance { get; private set; }
 
     public static List<Level> levels = new List<Level>{
-       new Level(Level.LevelID.Level_01, "Livello Demo", 8, 0, false, null, new List<AI> {new AI(AI.AiCodes.AI, "Amico", true, false, 1, false, "AI") })
+       new Level(Level.LevelID.Level_01, "Livello Demo", 8, 0, false, null, new List<AI> {new AI(AI.AiCodes.Fox, "Amico", true, false, 1, false, "Fox") })
     };
 
 

@@ -50,23 +50,22 @@ public class AiManager : MonoBehaviour
 
             if (transform.localPosition.x >= (initialPosition.x + maxDistance))
             {
-                direction = Vector3.left;
-                transform.localScale = new Vector3(-1, 1, 1);
                 currentSpeed = 0f;
                 yield return new WaitForSeconds(2f);
+                Debug.Log("GIRO VERSO SINISTRA");
+                direction = Vector3.left;
+                transform.localScale = new Vector3(1, 1, 1);
                 currentSpeed = speed;
             }
             else if (transform.localPosition.x <= (initialPosition.x - maxDistance))
             {
-                direction = Vector3.right;
-                transform.localScale = new Vector3(1, 1, 1);
                 currentSpeed = 0f;
                 yield return new WaitForSeconds(2f);
+                Debug.Log("GIRO VERSO DESTRA");
+                direction = Vector3.right;
+                transform.localScale = new Vector3(-1, 1, 1);
                 currentSpeed = speed;
 
-            } else
-            {
-               
             }
         }
     }

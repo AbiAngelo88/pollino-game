@@ -3,7 +3,7 @@ using UnityEngine;
 public class AI
 {
     // Inserire qui tutti i codici delle AI
-    public enum AiCodes { AI }
+    public enum AiCodes { Fox }
     private AiCodes code;
     private string desc;
     private bool isFriend;
