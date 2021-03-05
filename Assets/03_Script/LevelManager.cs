@@ -132,7 +132,6 @@ public class LevelManager : UIManager
             }
 
             GameObject instance = Instantiate(Resources.Load(toInstantiate.GetPrefabName(), typeof(GameObject)) as GameObject, spawnPoint);
-
             // Settare nelle istanze le varie caratteristiche delle AI: canFly, isEnemy, isFriend, baseDamage
             AiManager aiManager = instance.GetComponent<AiManager>();
             aiManager.SetAI(toInstantiate);
