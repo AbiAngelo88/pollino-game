@@ -12,6 +12,7 @@ public class LevelManager : UIManager
     [SerializeField] private Slider ecoPointsSlider;
     [SerializeField] private GameObject friendsContainer;
     [SerializeField] private GameObject enemiesContainer;
+    [SerializeField] private GameObject collectablesContainer;
     [SerializeField] private GameObject joystick;
     [SerializeField] private GameObject jumpBtn;
     [SerializeField] private GameObject pauseBtn;
@@ -43,6 +44,9 @@ public class LevelManager : UIManager
 
         // Generiamo le AI nemiche
         GenerateAI(enemiesContainer);
+
+        // Generiamo i collectables
+        GenerateCollectables();
 
         ecoPointsSlider.value = ecoPoints;
     }
@@ -81,6 +85,49 @@ public class LevelManager : UIManager
         pauseBtn.SetActive(false);
     }
 
+    private void GenerateCollectables()
+    {
+        Transform difficultyContainer;
+
+        if (collectablesContainer.gameObject.transform.childCount < 1)
+        {
+            Debug.Log("Nel game object " + collectablesContainer.name + " della scena non sono presenti i contenitori di difficoltà.");
+            return;
+        }
+
+        switch (difficulty)
+        {
+            case (Level.Difficulty.Easy):
+                difficultyContainer = collectablesContainer.gameObject.transform.GetChild(0);
+                break;
+            case (Level.Difficulty.Medium):
+                difficultyContainer = collectablesContainer.gameObject.transform.GetChild(1);
+                break;
+            case (Level.Difficulty.Hard):
+                difficultyContainer = collectablesContainer.gameObject.transform.GetChild(2);
+                break;
+            default:
+                difficultyContainer = collectablesContainer.gameObject.transform.GetChild(0);
+                break;
+        }
+
+        int totalSpawnPoints = difficultyContainer.transform.childCount;
+
+        if (totalSpawnPoints == 0)
+        {
+            Debug.Log("Non ci sono SPAWN POINTS dentro il game object " + collectablesContainer.name + " per la difficoltà " + difficulty);
+            return;
+        }
+
+        for (int i = 0; i < totalSpawnPoints; i++)
+        {
+            Transform spawnPoint = difficultyContainer.GetChild(i);
+
+            GameObject instance = Instantiate(Resources.Load("Chestnut", typeof(GameObject)) as GameObject, spawnPoint);
+            instance.transform.parent = spawnPoint;
+
+        }
+    }
 
     private void GenerateAI(GameObject container)
     {
