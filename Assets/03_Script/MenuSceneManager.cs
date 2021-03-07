@@ -27,7 +27,7 @@ public class MenuSceneManager : MonoBehaviour
 
     private void OnPlayerDataChange(PlayerData data)
     {
-        bool isFirstGame = data.getIsFirstGame();
+        bool isFirstGame = data.GetIsFirstGame();
         ActivateCanvas(isFirstGame);
         RefreshOptions(data);
     }
@@ -35,12 +35,12 @@ public class MenuSceneManager : MonoBehaviour
     private void  RefreshOptions(PlayerData data) {
         if (volumeInput != null)
         {
-            volumeInput.value = data.getVolume();
+            volumeInput.value = data.GetVolume();
         }
 
         if (optionsNicknameField != null)
         {
-            optionsNicknameField.text = data.getNickname();
+            optionsNicknameField.text = data.GetNickname();
         }
     }
 
@@ -66,9 +66,9 @@ public class MenuSceneManager : MonoBehaviour
         PlayerData data = PersistentDataManager.Instance.GetCurrentPlayerData();
         if (data != null)
         {
-            data.setIsFirstGame(false);
-            data.setNickname(optionsNicknameField.text);
-            data.setVolume(volume);
+            data.SetIsFirstGame(false);
+            data.SetNickname(optionsNicknameField.text);
+            data.SetVolume(volume);
             PlayerSaver.Save(data);
         }
     }
@@ -92,8 +92,8 @@ public class MenuSceneManager : MonoBehaviour
 
         if (data != null)
         {
-            data.setIsFirstGame(false);
-            data.setNickname(firstGameNicknameField.text);
+            data.SetIsFirstGame(false);
+            data.SetNickname(firstGameNicknameField.text);
             PlayerSaver.Save(data);
         }
     }

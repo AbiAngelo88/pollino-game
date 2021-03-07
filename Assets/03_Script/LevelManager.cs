@@ -17,15 +17,22 @@ public class LevelManager : UIManager
     [SerializeField] private GameObject jumpBtn;
     [SerializeField] private GameObject pauseBtn;
 
-    public delegate void EndLevel(int collectablesScore, int ecoScore);
+    public delegate void EndLevel(int collectablesScore, int ecoScore, int score);
     public static EndLevel EndLevelEmitter;
 
-    private int pickedCollectables = 0;
-    private int ecoPoints = 50;
     private Level currentLevel;
     private Level.Difficulty difficulty;
 
     private GameObject lastHurtedFriend;
+
+    // Numeriche descrittive della partita
+    private int pickedCollectables = 0;
+    private int ecoPoints = 0;
+    private int score = 0;
+    private int totalCollectables, totalFriends, totalEnemies;
+    private int destroyedEnemies, savedFriends;
+    private bool hasHurtedFriend = false;
+    
     
 
     private void Awake()
@@ -158,16 +165,27 @@ public class LevelManager : UIManager
                 break;
         }
 
-        List<AI> aiToInstatiate = container.name == "Friends" ? currentLevel.GetFriends() : currentLevel.GetEnemies();
 
         int totalSpawnPoints = difficultyContainer.transform.childCount;
-
         if (totalSpawnPoints == 0)
         {
             Debug.Log("Non ci sono SPAWN POINTS dentro il game object " + container.name + " per la difficoltà " + difficulty);
             return;
         }
-        
+
+        List<AI> aiToInstatiate = null;
+
+        if (container.name == "Friends")
+        {
+            totalFriends = totalSpawnPoints;
+            aiToInstatiate = currentLevel.GetFriends();
+        }
+        else
+        {
+            totalEnemies = totalSpawnPoints;
+            aiToInstatiate = currentLevel.GetEnemies();
+        }
+
         for(int i = 0; i < totalSpawnPoints; i++)
         {
             Transform spawnPoint = difficultyContainer.GetChild(i);
@@ -202,6 +220,9 @@ public class LevelManager : UIManager
 
     private void OnAICollision(GameObject collision)
     {
+        // Gestire caso friend ed enemy
+
+
         // Ottenere l'informazione di che eco malus ha l'AI
         AiManager aiManager = collision.gameObject.GetComponent<AiManager>();
         if (aiManager != null)
@@ -219,7 +240,11 @@ public class LevelManager : UIManager
 
     private void OnClimbOverAI(GameObject collision)
     {
-        if(lastHurtedFriend == null || (collision.name != lastHurtedFriend.name))
+
+        // Gestire caso friend ed enemy
+
+
+        if (lastHurtedFriend == null || (collision.name != lastHurtedFriend.name))
         {
             AiManager hurtedFiend = collision.gameObject.GetComponent<AiManager>();
             if (hurtedFiend != null)
@@ -243,10 +268,66 @@ public class LevelManager : UIManager
     {
         Time.timeScale = 0f;
         HideControllers();
-        EndLevelEmitter?.Invoke(pickedCollectables, ecoPoints);
+        CalculateLevelScore();
+        SaveLevelProgress();
+        EndLevelEmitter?.Invoke(pickedCollectables, ecoPoints, score);
     }
 
-        private void OnDestroy()
+    private void CalculateLevelScore()
+    {
+        score = 0;
+
+        if (totalCollectables == pickedCollectables)
+            score++;
+
+        if (totalFriends == savedFriends && !hasHurtedFriend)
+            score++;
+
+        if (totalEnemies == destroyedEnemies)
+            score++;
+    }
+
+    private void SaveLevelProgress()
+    {
+        PlayerData data = PersistentDataManager.Instance.GetCurrentPlayerData();
+        Dictionary<Level.LevelID, Dictionary<Level.Difficulty, PlayerLevel>> levels = data.GetLevels();
+        if(levels != null)
+        {
+            Debug.Log("Nessun livello salvato");
+            Dictionary<Level.Difficulty, PlayerLevel> levelData;
+
+            if(levels.TryGetValue(currentLevel.GetCode(), out levelData))
+            {
+                PlayerLevel level;
+
+                if (levelData.TryGetValue(difficulty, out level))
+                {
+                    if(level.GetCollectablesScore() < pickedCollectables)
+                        level.SetCollectablesScore(pickedCollectables);
+
+                    if (level.GetEcoScore() < ecoPoints)
+                        level.SetEcoScore(ecoPoints);
+
+                    level.SetCompleted(true);
+                }
+                else
+                {
+                    level = new PlayerLevel(currentLevel.GetCode(), pickedCollectables, ecoPoints, score, true);
+                }
+            }
+        }
+        else
+        {
+            PlayerLevel level = new PlayerLevel(currentLevel.GetCode(), pickedCollectables, ecoPoints, score, true);
+            Dictionary<Level.Difficulty, PlayerLevel> levelData = new Dictionary<Level.Difficulty, PlayerLevel>() { { difficulty, level } };
+            levels = new Dictionary<Level.LevelID, Dictionary<Level.Difficulty, PlayerLevel>>() { { currentLevel.GetCode() , levelData } };
+            data.SetLevels(levels);
+        }
+
+        PlayerSaver.Save(data);
+    }
+
+    private void OnDestroy()
     {
         PlayerBodyManager.PickedCollectableEmitter -= OnPickedCollectable;
         PlayerBodyManager.WinLevelEmitter -= OnWinLevel;

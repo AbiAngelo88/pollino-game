@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
 
-
     public delegate void OnAICollision(GameObject collision);
     public static OnAICollision AICollisionEmitter;
 
@@ -14,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float horizontalForce;
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask ground;
-
 
     private float horizontalMove;
     private bool isJumping = false;

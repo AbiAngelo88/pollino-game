@@ -13,7 +13,7 @@ public class PersistentDataManager : MonoBehaviour
     public static PersistentDataManager Instance { get; private set; }
 
     public static List<Level> levels = new List<Level>{
-       new Level(Level.LevelID.Level_01, "Livello Demo", 8, 0, false, null, new List<AI> {new AI(AI.AiCodes.Fox, "Amico", true, false, 1, false, "Fox") })
+       new Level(Level.LevelID.Level_01, false, null, new List<AI> {new AI(AI.AiCodes.Fox, "Amico", true, false, 1, false, "Fox") })
     };
 
 
@@ -43,7 +43,7 @@ public class PersistentDataManager : MonoBehaviour
         Debug.Log("IS MOBILE " + Application.isMobilePlatform);
 
         this.currentPlayer = PlayerSaver.Load();
-        OnVolumeChange(currentPlayer.getVolume());
+        OnVolumeChange(currentPlayer.GetVolume());
     }
 
     void Start()

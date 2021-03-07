@@ -17,7 +17,7 @@ public class EndLevelUIManager : UIManager
         endLevelPanel.SetActive(false);
     }
 
-    private void OnEndLevel(int collectablesScore, int ecoScore)
+    private void OnEndLevel(int collectablesScore, int ecoScore, int score)
     {
         Debug.Log("End Level");
         Debug.Log(collectablesScore);

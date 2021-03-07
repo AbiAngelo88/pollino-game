@@ -9,21 +9,15 @@ public class Level
     public enum LevelID { Level_01, Second } // Devono essere gli stessi nomi delle scene di gioco
 
     private LevelID code;
-    private string desc;
-    private int collectables;
-    private int ecoPoints;
     private bool hasBoss;
     private List<AI> enemies;
     private List<AI> friends;
 
     public Level() { }
 
-    public Level(LevelID code, string desc, int collectables, int ecoPoints, bool hasBoss, List<AI> enemies, List<AI> friends)
+    public Level(LevelID code, bool hasBoss, List<AI> enemies, List<AI> friends)
     {
         this.code = code;
-        this.desc = desc;
-        this.collectables = collectables;
-        this.ecoPoints = ecoPoints;
         this.hasBoss = hasBoss;
         this.enemies = enemies;
         this.friends = friends;
@@ -57,36 +51,6 @@ public class Level
     public LevelID GetCode()
     {
         return this.code;
-    }
-
-    public void SetDesc(string value)
-    {
-        this.desc = value;
-    }
-
-    public string GetDesc()
-    {
-        return this.desc;
-    }
-
-    public void SetCollectables(int value)
-    {
-        this.collectables = value;
-    }
-
-    public int GetCollectables()
-    {
-        return this.collectables;
-    }
-
-    public void SetEcoPoints(int value)
-    {
-        this.ecoPoints = value;
-    }
-
-    public int GetEcoPoints()
-    {
-        return this.ecoPoints;
     }
 
     public void SetHasBoss(bool value)

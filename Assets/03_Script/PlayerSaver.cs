@@ -51,6 +51,8 @@ public class PlayerSaver
             } else
                 data = new PlayerData();
 
+            
+            //Debug.Log("LEVEL: " + data.getLevels()[Level.LevelID.Level_01][Level.Difficulty.Easy].getEcoScore());
             fileStream.Close();
 
         } else

@@ -29,54 +29,59 @@ public class PlayerData
         this.isFirstGame = false;
     }
 
-    public void setIsFirstGame(bool value)
+    public void SetIsFirstGame(bool value)
     {
         this.isFirstGame = value;
     }
 
-    public bool getIsFirstGame()
+    public bool GetIsFirstGame()
     {
         return this.isFirstGame;
     }
 
-    public void setNickname(string nickname)
+    public void SetNickname(string nickname)
     {
         this.nickname = nickname;
     }
 
-    public string getNickname()
+    public string GetNickname()
     {
         return this.nickname;
     }
 
-    public void setAudio(bool audio)
+    public void SetAudio(bool audio)
     {
         this.audio = audio;
     }
 
-    public bool getAudio()
+    public bool GetAudio()
     {
         return this.audio;
     }
 
-    public void setVolume(float volume)
+    public void SetVolume(float volume)
     {
         this.volume = volume;
     }
 
-    public float getVolume()
+    public float GetVolume()
     {
         return this.volume;
     }
 
-    public void setLevels(Dictionary<Level.LevelID, Dictionary<Level.Difficulty, PlayerLevel>> levels)
+    public void SetLevels(Dictionary<Level.LevelID, Dictionary<Level.Difficulty, PlayerLevel>> levels)
     {
         this.levels = levels;       
     }
 
-    public Dictionary<Level.LevelID, Dictionary<Level.Difficulty, PlayerLevel>> getLevels()
+    public Dictionary<Level.LevelID, Dictionary<Level.Difficulty, PlayerLevel>> GetLevels()
     {
         return this.levels;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString();
     }
 }
 
@@ -85,69 +90,73 @@ public class PlayerLevel {
     private Level.LevelID level;
     private int collectablesScore;
     private int ecoScore;
-    private int record;
     private bool completed;
-    private int stars;
+    private int score;
 
-    public void setLevel(Level.LevelID value)
+    public PlayerLevel() { }
+
+    public PlayerLevel(Level.LevelID level, int collectablesScore, int ecoScore, int score, bool completed)
+    {
+        this.level = level;
+        this.collectablesScore = collectablesScore;
+        this.ecoScore = ecoScore;
+        this.score = score;
+        this.completed = completed;
+    }
+
+    public void SetLevel(Level.LevelID value)
     {
         this.level = value;
     }
 
-    public Level.LevelID getLevel()
+    public Level.LevelID GetLevel()
     {
         return this.level;
     }
 
-    public void setCollectablesScore(int value)
+    public void SetCollectablesScore(int value)
     {
         this.collectablesScore = value;
     }
 
-    public int getCollectablesScore()
+    public int GetCollectablesScore()
     {
         return this.collectablesScore;
     }
 
-    public void setEcoScore(int value)
+    public void SetEcoScore(int value)
     {
         this.ecoScore = value;
     }
 
-    public int getEcoScore()
+    public int GetEcoScore()
     {
         return this.ecoScore;
     }
 
-
-    public void setRecord(int value)
+    public void SetScore(int value)
     {
-        this.record = value;
+        this.score = value;
     }
 
-    public int getRecord()
+    public int GetScore()
     {
-        return this.record;
+        return this.score;
     }
 
-    public void setStars(int value)
-    {
-        this.stars = value;
-    }
-
-    public int getStars()
-    {
-        return this.stars;
-    }
-
-    public void setCompleted(bool value)
+    public void SetCompleted(bool value)
     {
         this.completed = value;
     }
 
-    public bool getCompleted()
+    public bool GetCompleted()
     {
         return this.completed;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString();
     }
 }
 
