@@ -9,6 +9,8 @@ TagManager:
   - Win
   - AI
   - Ground
+  - Friend
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public delegate void OnAICollision(GameObject collision);
-    public static OnAICollision AICollisionEmitter;
+    public delegate void OnFriendCollision(GameObject collision);
+    public delegate void OnEnemyCollision(GameObject collision);
+    public delegate void OnEnemyJump(GameObject collision);
+    public static OnFriendCollision FriendCollisionEmitter;
+    public static OnEnemyCollision EnemyCollisionEmitter;
+    public static OnEnemyJump EnemyJumpEmitter;
 
     [SerializeField] private Joystick joystick;
     [SerializeField] private float horizontalForce;
@@ -174,14 +178,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "AI")
+        if (collision.gameObject.tag == "Friend")
         {
-            ManageAICollision(collision);
-            AICollisionEmitter?.Invoke(collision.gameObject);
+            ManageFriendCollision(collision);
+            FriendCollisionEmitter?.Invoke(collision.gameObject);
         }
+        else if(collision.gameObject.tag == "Enemy")       
+            ManageEnemyCollision(collision);
     }
 
-    private void ManageAICollision(Collision2D collision)
+    private void ManageFriendCollision(Collision2D collision)
     {
         if (currentState == PlayerData.PlayerState.Fall)
         {
@@ -190,6 +196,20 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             StartCoroutine(Hurt());
+        }
+    }
+
+    private void ManageEnemyCollision(Collision2D collision)
+    {
+        if (currentState == PlayerData.PlayerState.Fall)
+        {
+            Jump();
+            EnemyJumpEmitter?.Invoke(collision.gameObject);
+        }
+        else
+        {
+            StartCoroutine(Hurt());
+            EnemyCollisionEmitter?.Invoke(collision.gameObject);
         }
     }
 

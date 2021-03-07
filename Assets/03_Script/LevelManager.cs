@@ -45,8 +45,10 @@ public class LevelManager : UIManager
         PlayerBodyManager.PickedCollectableEmitter += OnPickedCollectable;
         PlayerBodyManager.WinLevelEmitter += OnWinLevel;
         PlayerBodyManager.DefeatLevelEmitter += RestartLevel;
-        PlayerBodyManager.ClimbOverAIEmitter += OnClimbOverAI;
-        PlayerMovement.AICollisionEmitter += OnAICollision;
+        PlayerBodyManager.ClimbOverFriendEmitter += OnClimbOverFriend;
+        PlayerMovement.FriendCollisionEmitter += OnFriendCollision;
+        PlayerMovement.EnemyCollisionEmitter += OnEnemyCollision;
+        PlayerMovement.EnemyJumpEmitter += OnEnemyJump;
         ManageCorrectInteractions();
 
         // Generiamo le AI amiche
@@ -58,7 +60,7 @@ public class LevelManager : UIManager
         // Generiamo i collectables
         GenerateCollectables();
 
-        ecoPointsSlider.value = ecoPoints;
+        ecoPointsSlider.maxValue = totalEnemies + totalFriends;
     }
 
     private void SetCurrentLevel()
@@ -91,6 +93,7 @@ public class LevelManager : UIManager
     {
         joystick.SetActive(false);
         pickedCollectablesText.gameObject.transform.parent.gameObject.SetActive(false);
+        ecoPointsSlider.gameObject.SetActive(false);
         jumpBtn.SetActive(false);
         pauseBtn.SetActive(false);
     }
@@ -121,15 +124,15 @@ public class LevelManager : UIManager
                 break;
         }
 
-        int totalSpawnPoints = difficultyContainer.transform.childCount;
+        totalCollectables = difficultyContainer.transform.childCount;
 
-        if (totalSpawnPoints == 0)
+        if (totalCollectables == 0)
         {
             Debug.Log("Non ci sono SPAWN POINTS dentro il game object " + collectablesContainer.name + " per la difficoltà " + difficulty);
             return;
         }
 
-        for (int i = 0; i < totalSpawnPoints; i++)
+        for (int i = 0; i < totalCollectables; i++)
         {
             Transform spawnPoint = difficultyContainer.GetChild(i);
 
@@ -218,41 +221,59 @@ public class LevelManager : UIManager
         pickedCollectablesText.text = pickedCollectables.ToString();
     }
 
-    private void OnAICollision(GameObject collision)
+    private void OnFriendCollision(GameObject collision)
     {
-        // Gestire caso friend ed enemy
-
-
         // Ottenere l'informazione di che eco malus ha l'AI
         AiManager aiManager = collision.gameObject.GetComponent<AiManager>();
         if (aiManager != null)
         {
             AI collidedAI = aiManager.GetAI();
-            // Addizionare il valore
-            ecoPoints = ecoPoints - collidedAI.GetBaseDamage();
-            ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= 100 ? 100 : ecoPoints);
+            ecoPoints--;
+            ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= (totalFriends + totalEnemies) ? (totalFriends + totalEnemies) : ecoPoints);
             ecoPointsSlider.value = ecoPoints;
             lastHurtedFriend = collision;
+            hasHurtedFriend = true;
             Debug.Log("Destroy " + collision.name + " tra 1 secondo");
             Destroy(collision.gameObject, 1f);
         }
     }
 
-    private void OnClimbOverAI(GameObject collision)
+    private void OnEnemyCollision(GameObject collision)
     {
+        pickedCollectables = 0;
+        pickedCollectablesText.text = pickedCollectables.ToString();
+    }
 
-        // Gestire caso friend ed enemy
+    private void OnEnemyJump(GameObject collision)
+    {   
+        // Ottenere l'informazione di che eco malus ha l'AI
+        AiManager aiManager = collision.gameObject.GetComponent<AiManager>();
+        if (aiManager != null)
+        {
+            AI collidedAI = aiManager.GetAI();
+            ecoPoints++;
+            ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= (totalFriends + totalEnemies) ? (totalFriends + totalEnemies) : ecoPoints);
+            ecoPointsSlider.value = ecoPoints;
+            lastHurtedFriend = collision;
+            destroyedEnemies++;
+            Debug.Log("Destroy " + collision.name + " tra 1 secondo");
+            Destroy(collision.gameObject, 1f);
+        }
+    }
 
+    private void OnClimbOverFriend(GameObject collision)
+    {
 
         if (lastHurtedFriend == null || (collision.name != lastHurtedFriend.name))
         {
-            AiManager hurtedFiend = collision.gameObject.GetComponent<AiManager>();
-            if (hurtedFiend != null)
+            AiManager aiManager = collision.gameObject.GetComponent<AiManager>();
+            if (aiManager != null)
             {
-                AI collidedAI = hurtedFiend.GetAI();
-                ecoPoints = ecoPoints + collidedAI.GetBaseDamage() * 2;
-                ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= 100 ? 100 : ecoPoints);
+                AI collidedAI = aiManager.GetAI();
+                ecoPoints = ecoPoints + collidedAI.GetBaseDamage();
+                ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= (totalFriends + totalEnemies) ? (totalFriends + totalEnemies) : ecoPoints);
                 ecoPointsSlider.value = ecoPoints;
+                savedFriends++;
             }
             Debug.Log("BONUS ECO OTTENUTO!");
         } else
@@ -332,7 +353,9 @@ public class LevelManager : UIManager
         PlayerBodyManager.PickedCollectableEmitter -= OnPickedCollectable;
         PlayerBodyManager.WinLevelEmitter -= OnWinLevel;
         PlayerBodyManager.DefeatLevelEmitter -= RestartLevel;
-        PlayerBodyManager.ClimbOverAIEmitter -= OnClimbOverAI;
-        PlayerMovement.AICollisionEmitter -= OnAICollision;
+        PlayerBodyManager.ClimbOverFriendEmitter -= OnClimbOverFriend;
+        PlayerMovement.FriendCollisionEmitter -= OnFriendCollision;
+        PlayerMovement.EnemyCollisionEmitter -= OnEnemyCollision;
+        PlayerMovement.EnemyJumpEmitter -= OnEnemyJump;
     }
 }
