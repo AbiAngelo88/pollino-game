@@ -27,8 +27,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator anim;
     private PlayerData.PlayerState currentState = PlayerData.PlayerState.Idle;
-    private float zRotation;
-    private bool isCrashed = false;
 
     void Start()
     {
@@ -61,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        zRotation = transform.rotation.eulerAngles.z;
         SetPlayerState();
     }
 
@@ -81,13 +78,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetPlayerState()
     {
-        // Jump
-        //if (zRotation >= 90 && zRotation <= 270 || isCrashed)
-        //{
-        //    isCrashed = true;
-        //    currentState = PlayerData.PlayerState.Crash;
-        //}
-        //else 
         if (isHurted)
         {
             currentState = PlayerData.PlayerState.Idle;
@@ -117,10 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isCrashed)
-        {
-            MovePlayer();
-        }
+        MovePlayer();
     }
 
     private void MovePlayer()
@@ -130,7 +117,9 @@ public class PlayerMovement : MonoBehaviour
             // In questo modo evito di attivare più volte 
             if(!isFrozen)
             {
-                rb.AddForce(-1 * rb.velocity.normalized * jumpForce);
+                Vector3 forceDirection = transform.localScale.x > 0f ? Vector3.left : Vector3.right;
+                Debug.Log("DIREZIONE FORZA " + forceDirection);
+                rb.AddForce(forceDirection * jumpForce);
                 isFrozen = true;
             }
         }
@@ -152,10 +141,6 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(Vector3.right * horizontalForce);
                 transform.localScale = new Vector2(1, 1);
             }
-        }
-        else
-        {
-
         }
     }
 
@@ -182,10 +167,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Friend")
-        {
             ManageFriendCollision(collision);
-            FriendCollisionEmitter?.Invoke(collision.gameObject);
-        }
         else if(collision.gameObject.tag == "Enemy")       
             ManageEnemyCollision(collision);
     }
@@ -200,6 +182,8 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Hurt());
         }
+
+        FriendCollisionEmitter?.Invoke(collision.gameObject);
     }
 
     private void ManageEnemyCollision(Collision2D collision)

@@ -20,6 +20,10 @@ public class LevelManager : UIManager
     public delegate void EndLevel(int collectablesScore, int ecoScore, int score);
     public static EndLevel EndLevelEmitter;
 
+    public delegate void DestroyAI(GameObject ai);
+    public static DestroyAI DestroyAIEmitter;
+
+
     private Level currentLevel;
     private Level.Difficulty difficulty;
 
@@ -233,8 +237,8 @@ public class LevelManager : UIManager
             ecoPointsSlider.value = ecoPoints;
             lastHurtedFriend = collision;
             hasHurtedFriend = true;
-            Debug.Log("Destroy " + collision.name + " tra 1 secondo");
-            Destroy(collision.gameObject, 1f);
+
+            DestroyAIEmitter?.Invoke(collision);
         }
     }
 
@@ -257,7 +261,7 @@ public class LevelManager : UIManager
             lastHurtedFriend = collision;
             destroyedEnemies++;
             Debug.Log("Destroy " + collision.name + " tra 1 secondo");
-            Destroy(collision.gameObject, 1f);
+            Destroy(collision.gameObject, .4f);
         }
     }
 
@@ -274,8 +278,10 @@ public class LevelManager : UIManager
                 ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= (totalFriends + totalEnemies) ? (totalFriends + totalEnemies) : ecoPoints);
                 ecoPointsSlider.value = ecoPoints;
                 savedFriends++;
+                
+                DestroyAIEmitter?.Invoke(collision);
             }
-            Debug.Log("BONUS ECO OTTENUTO!");
+            DestroyAIEmitter?.Invoke(collision);
         } else
         {
             Debug.Log("NIENTE BONUS A STO GIRO!");

@@ -18,6 +18,7 @@ public class AiManager : MonoBehaviour
     private AI currentAI;
     private Animator anim;
     private AI.AiState currentState = AI.AiState.Idle;
+    private bool isDestroying = false;
 
     public AI GetAI()
     {
@@ -31,6 +32,7 @@ public class AiManager : MonoBehaviour
 
     private void Start()
     {
+        LevelManager.DestroyAIEmitter += OnDestroyAI;
         rb = GetComponent<Rigidbody2D>();
         GetAnimator();
 
@@ -48,15 +50,29 @@ public class AiManager : MonoBehaviour
         SetAiState();
     }
 
+    private void OnDestroyAI(GameObject ai)
+    {
+        Debug.Log("Destroy " + ai.name + " tra 0.5 secondo");
+        currentSpeed = 0f;
+        isDestroying = true;
+        currentState = AI.AiState.Jump;
+        // Attendiamo per la durata dell'animazione che dovrebbe essere di circa un secondo
+        Destroy(gameObject, 0.5f);
+    }
+
     private void SetAiState()
     {
-        if(rb.velocity.x == 0f)
+        if (isDestroying)
         {
-            currentState = AI.AiState.Idle;
+            currentState = AI.AiState.Jump;
+        }
+        else if (currentSpeed > 0.1f)
+        {
+            currentState = AI.AiState.Run;
         }
         else
         {
-            currentState = AI.AiState.Run;
+            currentState = AI.AiState.Idle;
         }
 
         anim.SetInteger("state", currentState.GetHashCode());
@@ -80,7 +96,7 @@ public class AiManager : MonoBehaviour
     {
 
         currentSpeed = speed;
-        while (foundInitialPosition)
+        while (foundInitialPosition && !isDestroying)
         {
             yield return new WaitForFixedUpdate();
 
@@ -123,6 +139,11 @@ public class AiManager : MonoBehaviour
                 StartCoroutine(GetDirection());
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        LevelManager.DestroyAIEmitter -= OnDestroyAI;
     }
 
 }
