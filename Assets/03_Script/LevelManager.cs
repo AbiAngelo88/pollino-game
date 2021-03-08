@@ -83,10 +83,10 @@ public class LevelManager : UIManager
         {
             jumpBtn.SetActive(isMobileDevice);
         }
-        if (pauseBtn)
-        {
-            pauseBtn.SetActive(isMobileDevice);
-        }
+        //if (pauseBtn)
+        //{
+        //    pauseBtn.SetActive(isMobileDevice);
+        //}
     }
 
     private void HideControllers()

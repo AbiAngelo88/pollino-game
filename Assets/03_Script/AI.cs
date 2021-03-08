@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class AI
 {
+
+    public enum AiState { Idle, Run, Jump }
+
     // Inserire qui tutti i codici delle AI
     public enum AiCodes { Fox }
     private AiCodes code;

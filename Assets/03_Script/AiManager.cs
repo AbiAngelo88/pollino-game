@@ -16,6 +16,8 @@ public class AiManager : MonoBehaviour
     private float currentSpeed;
     private bool foundInitialPosition = false;
     private AI currentAI;
+    private Animator anim;
+    private AI.AiState currentState = AI.AiState.Idle;
 
     public AI GetAI()
     {
@@ -30,6 +32,7 @@ public class AiManager : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GetAnimator();
 
         if (currentAI.GetCanFly())
         {
@@ -38,6 +41,39 @@ public class AiManager : MonoBehaviour
             StartCoroutine(GetDirection());
         }
 
+    }
+
+    private void Update()
+    {
+        SetAiState();
+    }
+
+    private void SetAiState()
+    {
+        if(rb.velocity.x == 0f)
+        {
+            currentState = AI.AiState.Idle;
+        }
+        else
+        {
+            currentState = AI.AiState.Run;
+        }
+
+        anim.SetInteger("state", currentState.GetHashCode());
+    }
+
+    private void GetAnimator()
+    {
+        // Valorizzo l'animator del component child
+        Transform childTransform = transform.GetChild(0);
+        if (childTransform)
+        {
+            GameObject child = transform.GetChild(0).gameObject;
+            if (child != null)
+            {
+                anim = child.GetComponent<Animator>();
+            }
+        }
     }
 
     private IEnumerator GetDirection()
@@ -82,7 +118,6 @@ public class AiManager : MonoBehaviour
         {
             if (rb.IsTouchingLayers(ground))
             {
-
                 initialPosition = transform.localPosition;
                 foundInitialPosition = true;
                 StartCoroutine(GetDirection());

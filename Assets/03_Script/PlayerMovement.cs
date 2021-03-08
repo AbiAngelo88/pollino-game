@@ -33,10 +33,13 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         UIManager.OnRightBtnTouch += Jump;
-
         rb = GetComponent<Rigidbody2D>();
-        // wheelsCollider = GetComponent<CapsuleCollider2D>();
+        GetAnimator();
 
+    }
+
+    private void GetAnimator()
+    {
         // Valorizzo l'animator del component child
         Transform childTransform = transform.GetChild(0);
         if (childTransform)
