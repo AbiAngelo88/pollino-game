@@ -18,12 +18,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask ground;
 
+    private CapsuleCollider2D wheelsCollider;
     private float horizontalMove;
     private bool isJumping = false;
     private bool isHurted = false;
     private bool isFrozen = false;
     private Rigidbody2D rb;
-    [SerializeField]  private CapsuleCollider2D wheelsCollider;
 
     private Animator anim;
     private PlayerData.PlayerState currentState = PlayerData.PlayerState.Idle;
@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         UIManager.OnRightBtnTouch += Jump;
         rb = GetComponent<Rigidbody2D>();
+        wheelsCollider = GetComponent<CapsuleCollider2D>();
         GetAnimator();
 
     }
@@ -130,7 +131,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (horizontalMove != 0 && IsTouchingGround() && Mathf.Abs(rb.velocity.x) < 30f)
         {
-            Debug.Log("VELOCITA " + rb.velocity.x);
 
             if (horizontalMove < 0)
             {

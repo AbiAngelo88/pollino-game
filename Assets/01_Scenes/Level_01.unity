@@ -17786,7 +17786,6 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
-  wheelsCollider: {fileID: 6003881667747730630}
 --- !u!1 &874296766
 GameObject:
   m_ObjectHideFlags: 0
@@ -42005,8 +42004,9 @@ GameObject:
   - component: {fileID: 407209636748232878}
   - component: {fileID: 873415042}
   - component: {fileID: 873415043}
-  - component: {fileID: 6003881667747730631}
   - component: {fileID: 6003881667747730630}
+  - component: {fileID: 6003881667747730632}
+  - component: {fileID: 6003881667747730629}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -42014,6 +42014,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!58 &6003881667747730629
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003881667747730628}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.55, y: 0.9}
+  serializedVersion: 2
+  m_Radius: 0.9
 --- !u!70 &6003881667747730630
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -42030,8 +42046,8 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.75}
   m_Size: {x: 5.3, y: 2}
   m_Direction: 1
---- !u!70 &6003881667747730631
-CapsuleCollider2D:
+--- !u!58 &6003881667747730632
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -42043,9 +42059,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.92}
-  m_Size: {x: 5, y: 1.6}
-  m_Direction: 1
+  m_Offset: {x: -1.55, y: 0.9}
+  serializedVersion: 2
+  m_Radius: 0.9
 --- !u!4 &6013286545220507061
 Transform:
   m_ObjectHideFlags: 0
