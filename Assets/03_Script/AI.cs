@@ -6,9 +6,8 @@ public class AI
     public enum AiState { Idle, Run, Jump }
 
     // Inserire qui tutti i codici delle AI
-    public enum AiCodes { Fox }
+    public enum AiCodes { Fox, Boar }
     private AiCodes code;
-    private string desc;
     private bool isFriend;
     private bool isEnemy;
     private int baseDamage;
@@ -17,10 +16,9 @@ public class AI
     
     public AI() { }
 
-    public AI(AiCodes code, string desc, bool isFriend, bool isEnemy, int baseDamage, bool canFly, string prefabName)
+    public AI(AiCodes code, bool isFriend, bool isEnemy, int baseDamage, bool canFly, string prefabName)
     {
         this.code = code;
-        this.desc = desc;
         this.isFriend = isFriend;
         this.isEnemy = isEnemy;
         this.baseDamage = baseDamage;
@@ -36,16 +34,6 @@ public class AI
     public void SetCode(AiCodes code)
     {
         this.code = code;
-    }
-
-    public string GetDesc()
-    {
-        return this.desc;
-    }
-
-    public void SetDesc(string desc)
-    {
-        this.desc = desc;
     }
 
     public string GetPrefabName()

@@ -118,7 +118,6 @@ public class PlayerMovement : MonoBehaviour
             if(!isFrozen)
             {
                 Vector3 forceDirection = transform.localScale.x > 0f ? Vector3.left : Vector3.right;
-                Debug.Log("DIREZIONE FORZA " + forceDirection);
                 rb.AddForce(forceDirection * jumpForce);
                 isFrozen = true;
             }

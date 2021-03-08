@@ -88,6 +88,8 @@ public class AiManager : MonoBehaviour
             if (child != null)
             {
                 anim = child.GetComponent<Animator>();
+            } else {
+                Debug.Log("PROBLEMI con animator");
             }
         }
     }
