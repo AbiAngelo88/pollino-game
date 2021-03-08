@@ -221,8 +221,8 @@ public class LevelManager : UIManager
     private void OnPickedCollectable(GameObject collectable)
     {
         pickedCollectables += 1;
-        Destroy(collectable);
         pickedCollectablesText.text = pickedCollectables.ToString();
+        Destroy(collectable);
     }
 
     private void OnFriendCollision(GameObject collision)
