@@ -78,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetPlayerState()
     {
+        
         if (isHurted)
         {
             currentState = PlayerData.PlayerState.Idle;
@@ -127,8 +128,9 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(transform.up * jumpForce);
             isJumping = false;
         }
-        else if (horizontalMove != 0 && IsTouchingGround())
+        else if (horizontalMove != 0 && IsTouchingGround() && Mathf.Abs(rb.velocity.x) < 30f)
         {
+            Debug.Log("VELOCITA " + rb.velocity.x);
 
             if (horizontalMove < 0)
             {
