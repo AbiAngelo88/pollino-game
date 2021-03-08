@@ -42,7 +42,6 @@ public class AiManager : MonoBehaviour
             foundInitialPosition = true;
             StartCoroutine(GetDirection());
         }
-
     }
 
     private void Update()
@@ -52,12 +51,16 @@ public class AiManager : MonoBehaviour
 
     private void OnDestroyAI(GameObject ai)
     {
-        Debug.Log("Destroy " + ai.name + " tra 0.5 secondo");
-        currentSpeed = 0f;
-        isDestroying = true;
-        currentState = AI.AiState.Jump;
-        // Attendiamo per la durata dell'animazione che dovrebbe essere di circa un secondo
-        Destroy(gameObject, 0.5f);
+        // Debug.Log("Destroy " + ai.name + " tra 0.5 secondo");
+        if(ai.gameObject.name == gameObject.name)
+        {
+            currentSpeed = 0f;
+            isDestroying = true;
+            currentState = AI.AiState.Jump;
+            // Attendiamo per la durata dell'animazione che dovrebbe essere di circa un secondo
+            Destroy(gameObject, 0.5f);
+        }
+
     }
 
     private void SetAiState()
@@ -88,8 +91,6 @@ public class AiManager : MonoBehaviour
             if (child != null)
             {
                 anim = child.GetComponent<Animator>();
-            } else {
-                Debug.Log("PROBLEMI con animator");
             }
         }
     }
