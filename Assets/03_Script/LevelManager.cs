@@ -23,6 +23,9 @@ public class LevelManager : UIManager
     public delegate void DestroyAI(GameObject ai);
     public static DestroyAI DestroyAIEmitter;
 
+    public delegate void SaveAI(GameObject ai);
+    public static SaveAI SaveAIEmitter;
+
 
     private Level currentLevel;
     private Level.Difficulty difficulty;
@@ -267,7 +270,6 @@ public class LevelManager : UIManager
 
     private void OnClimbOverFriend(GameObject collision)
     {
-
         if (lastHurtedFriend == null || (collision.name != lastHurtedFriend.name))
         {
             AiManager aiManager = collision.gameObject.GetComponent<AiManager>();
@@ -278,15 +280,10 @@ public class LevelManager : UIManager
                 ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= (totalFriends + totalEnemies) ? (totalFriends + totalEnemies) : ecoPoints);
                 ecoPointsSlider.value = ecoPoints;
                 savedFriends++;
-                
-                DestroyAIEmitter?.Invoke(collision);
+                SaveAIEmitter?.Invoke(collision);
             }
-            DestroyAIEmitter?.Invoke(collision);
-        } else
-        {
-            Debug.Log("NIENTE BONUS A STO GIRO!");
-        }
-
+            
+        } 
         lastHurtedFriend = null;
     }
 

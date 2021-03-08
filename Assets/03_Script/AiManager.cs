@@ -19,6 +19,7 @@ public class AiManager : MonoBehaviour
     private Animator anim;
     private AI.AiState currentState = AI.AiState.Idle;
     private bool isDestroying = false;
+    private bool isSaved = false;
 
     public AI GetAI()
     {
@@ -33,6 +34,7 @@ public class AiManager : MonoBehaviour
     private void Start()
     {
         LevelManager.DestroyAIEmitter += OnDestroyAI;
+        LevelManager.SaveAIEmitter += OnSaveAI;
         rb = GetComponent<Rigidbody2D>();
         GetAnimator();
 
@@ -52,20 +54,34 @@ public class AiManager : MonoBehaviour
     private void OnDestroyAI(GameObject ai)
     {
         // Debug.Log("Destroy " + ai.name + " tra 0.5 secondo");
-        if(ai.gameObject.name == gameObject.name)
+        if(ai.gameObject.GetInstanceID() == gameObject.GetInstanceID())
         {
             currentSpeed = 0f;
             isDestroying = true;
-            currentState = AI.AiState.Jump;
             // Attendiamo per la durata dell'animazione che dovrebbe essere di circa un secondo
             Destroy(gameObject, 0.5f);
         }
+    }
 
+    private void OnSaveAI(GameObject ai)
+    {
+        Debug.Log("SAVE " + ai.name + " tra 0.5 secondo");
+        if (ai.gameObject.GetInstanceID() == gameObject.GetInstanceID())
+        {
+            currentSpeed = 0f;
+            isSaved = true;
+            // Attendiamo per la durata dell'animazione che dovrebbe essere di circa un secondo
+            Destroy(gameObject, 0.5f);
+        }
     }
 
     private void SetAiState()
     {
-        if (isDestroying)
+        if (isSaved)
+        {
+            currentState = AI.AiState.Save;
+        }
+        else if (isDestroying)
         {
             currentState = AI.AiState.Jump;
         }
@@ -147,6 +163,7 @@ public class AiManager : MonoBehaviour
     private void OnDestroy()
     {
         LevelManager.DestroyAIEmitter -= OnDestroyAI;
+        LevelManager.SaveAIEmitter -= OnSaveAI;
     }
 
 }
