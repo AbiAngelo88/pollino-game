@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
-    public enum PlayerState { Idle, Run, Jump, Fall, Crash }
+    public enum PlayerState { Idle, Run, Jump, Fall, Hurted }
 
     private string nickname;
     private bool audio;

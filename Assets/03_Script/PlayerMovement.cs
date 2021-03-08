@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (isHurted)
         {
-            currentState = PlayerData.PlayerState.Idle;
+            currentState = PlayerData.PlayerState.Hurted;
         }
         else if (!IsTouchingGround())
         {
@@ -154,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log("HURT");
         isHurted = true;
         isFrozen = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         isHurted = false;
     }
 

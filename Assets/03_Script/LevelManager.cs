@@ -17,7 +17,7 @@ public class LevelManager : UIManager
     [SerializeField] private GameObject jumpBtn;
     [SerializeField] private GameObject pauseBtn;
 
-    public delegate void EndLevel(int collectablesScore, int ecoScore, int score);
+    public delegate void EndLevel(int collectablesScore, int ecoScore, int score, string nickname);
     public static EndLevel EndLevelEmitter;
 
     public delegate void DestroyAI(GameObject ai);
@@ -294,7 +294,7 @@ public class LevelManager : UIManager
         HideControllers();
         CalculateLevelScore();
         SaveLevelProgress();
-        EndLevelEmitter?.Invoke(pickedCollectables, ecoPoints, score);
+        EndLevelEmitter?.Invoke(pickedCollectables, ecoPoints, score, PersistentDataManager.Instance.GetCurrentPlayerData().GetNickname());
     }
 
     private void CalculateLevelScore()
