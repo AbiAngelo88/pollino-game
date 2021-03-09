@@ -17,7 +17,7 @@ public class LevelManager : UIManager
     [SerializeField] private GameObject jumpBtn;
     [SerializeField] private GameObject pauseBtn;
 
-    public delegate void EndLevel(int collectablesScore, int ecoScore, int score, string nickname);
+    public delegate void EndLevel(int collectablesScore, int ecoScore, int maxEcoPoints, int score, string nickname);
     public static EndLevel EndLevelEmitter;
 
     public delegate void DestroyAI(GameObject ai);
@@ -268,10 +268,9 @@ public class LevelManager : UIManager
             ecoPoints++;
             ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= (totalFriends + totalEnemies) ? (totalFriends + totalEnemies) : ecoPoints);
             ecoPointsSlider.value = ecoPoints;
-            lastHurtedFriend = collision;
             destroyedEnemies++;
 
-            Destroy(collision.gameObject, .5f);
+            DestroyAIEmitter?.Invoke(collision);
         }
     }
 
@@ -297,11 +296,11 @@ public class LevelManager : UIManager
 
     private void OnWinLevel()
     {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         HideControllers();
         CalculateLevelScore();
         SaveLevelProgress();
-        EndLevelEmitter?.Invoke(pickedCollectables, ecoPoints, score, PersistentDataManager.Instance.GetCurrentPlayerData().GetNickname());
+        EndLevelEmitter?.Invoke(pickedCollectables, ecoPoints, (totalFriends + totalEnemies), score, PersistentDataManager.Instance.GetCurrentPlayerData().GetNickname());
     }
 
     private void CalculateLevelScore()

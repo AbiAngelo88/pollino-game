@@ -3,7 +3,7 @@ using UnityEngine;
 public class AI
 {
 
-    public enum AiState { Idle, Run, Jump, Save }
+    public enum AiState { Idle, Run, Destroy, Save }
 
     // Inserire qui tutti i codici delle AI
     public enum AiCodes { Fox, Boar, Pyromaniac }

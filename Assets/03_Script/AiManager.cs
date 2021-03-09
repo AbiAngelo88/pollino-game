@@ -86,7 +86,7 @@ public class AiManager : MonoBehaviour
         }
         else if (isDestroying)
         {
-            currentState = AI.AiState.Jump;
+            currentState = AI.AiState.Destroy;
         }
         else if (currentSpeed > 0.1f)
         {
@@ -161,7 +161,11 @@ public class AiManager : MonoBehaviour
             {
                 initialPosition = transform.localPosition;
                 foundInitialPosition = true;
-                StartCoroutine(GetDirection());
+
+                if (currentAI.GetCanMove())
+                    StartCoroutine(GetDirection());
+                else
+                    currentSpeed = 0f;
             }
         }
     }

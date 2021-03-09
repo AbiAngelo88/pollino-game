@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Joystick joystick;
     [SerializeField] private CapsuleCollider2D wheelsCollider;
     [SerializeField] private LayerMask ground;
-    [SerializeField] private float horizontalForce = 42.2f;
+    [SerializeField] private float horizontalForce = 42.5f;
     [SerializeField] private float rotationalForce = 250f;
     [SerializeField] private float jumpForce = 1000f;
     [SerializeField] private float maxSpeed = 20f;
