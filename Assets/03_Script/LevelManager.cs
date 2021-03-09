@@ -202,6 +202,13 @@ public class LevelManager : UIManager
 
             //Ottengo l'informazione del prefab da istanziare
             SpawnPointManager spManager = spawnPoint.gameObject.GetComponent<SpawnPointManager>();
+            
+            if(aiToInstatiate == null || aiToInstatiate.Count == 0)
+            {
+                Debug.Log("Non è possibile istanziare " + spManager.prefabName + " perchè non è previsto dalla configurazione del livello");
+                Debug.Log("Per istanziarlo è necessario aggiungerlo alla lista dei " + container.name + " del livello " + currentLevel);
+                return;
+            }
 
             AI toInstantiate = aiToInstatiate.Find(ai => ai.GetCode() == spManager.prefabName);
 
@@ -263,8 +270,8 @@ public class LevelManager : UIManager
             ecoPointsSlider.value = ecoPoints;
             lastHurtedFriend = collision;
             destroyedEnemies++;
-            Debug.Log("Destroy " + collision.name + " tra 1 secondo");
-            Destroy(collision.gameObject, .4f);
+
+            Destroy(collision.gameObject, .5f);
         }
     }
 
@@ -299,15 +306,12 @@ public class LevelManager : UIManager
 
     private void CalculateLevelScore()
     {
-        score = 0;
+        score = 1;
 
         if (totalCollectables == pickedCollectables)
             score++;
 
-        if (totalFriends == savedFriends && !hasHurtedFriend)
-            score++;
-
-        if (totalEnemies == destroyedEnemies)
+        if (totalFriends == savedFriends && !hasHurtedFriend && totalEnemies == destroyedEnemies)
             score++;
     }
 

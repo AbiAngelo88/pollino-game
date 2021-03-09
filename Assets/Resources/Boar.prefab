@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 5840832377644569027}
   - component: {fileID: 5840832377644569028}
   - component: {fileID: 9138820660807221012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boar
   m_TagString: Friend
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}

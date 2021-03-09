@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 8876743551311600412}
   - component: {fileID: 8876743551311600411}
   - component: {fileID: 1814113681156442545}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fox
   m_TagString: Friend
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}

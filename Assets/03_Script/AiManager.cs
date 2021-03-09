@@ -65,7 +65,7 @@ public class AiManager : MonoBehaviour
 
     private void OnSaveAI(GameObject ai)
     {
-        Debug.Log("SAVE " + ai.name + " tra 0.5 secondo");
+        // Debug.Log("SAVE " + ai.name + " tra 0.5 secondo");
         if (ai.gameObject.GetInstanceID() == gameObject.GetInstanceID())
         {
             currentSpeed = 0f;
@@ -77,6 +77,9 @@ public class AiManager : MonoBehaviour
 
     private void SetAiState()
     {
+        if(anim == null)
+            return;
+
         if (isSaved)
         {
             currentState = AI.AiState.Save;
@@ -107,6 +110,9 @@ public class AiManager : MonoBehaviour
             if (child != null)
             {
                 anim = child.GetComponent<Animator>();
+
+                if (anim == null)
+                    Debug.Log("No animator for " + gameObject.name);
             }
         }
     }
@@ -142,7 +148,7 @@ public class AiManager : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (foundInitialPosition)
+        if (foundInitialPosition && currentAI.GetCanMove())
             transform.Translate(direction * currentSpeed * Time.deltaTime, Space.World);
         
     }

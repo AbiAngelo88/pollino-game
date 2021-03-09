@@ -11,6 +11,7 @@ public class EndLevelUIManager : UIManager
     [SerializeField] private TextMeshProUGUI ecoScoreText;
     [SerializeField] private TextMeshProUGUI playerNameText;
     [SerializeField] private GameObject endLevelPanel;
+    [SerializeField] private GameObject[] trophies;
     
     void Start()
     {
@@ -27,6 +28,19 @@ public class EndLevelUIManager : UIManager
         collectablesScoreText.text = collectablesScore.ToString();
         ecoScoreText.text = ecoScore.ToString();
         playerNameText.text = nickname;
+
+        ShowTrophies(score);
+    }
+
+    private void ShowTrophies(int score)
+    {
+        for(int i = 0; i < score; i++)
+        {
+            if(trophies[i] != null)
+            {
+                trophies[i].transform.GetChild(0).gameObject.SetActive(true);
+            }
+        }
     }
 
     private void OnDestroy()

@@ -6,23 +6,25 @@ public class AI
     public enum AiState { Idle, Run, Jump, Save }
 
     // Inserire qui tutti i codici delle AI
-    public enum AiCodes { Fox, Boar }
+    public enum AiCodes { Fox, Boar, Pyromaniac }
     private AiCodes code;
     private bool isFriend;
     private bool isEnemy;
     private int baseDamage;
     private bool canFly;
+    private bool canMove;
     private string prefabName;
     
     public AI() { }
 
-    public AI(AiCodes code, bool isFriend, bool isEnemy, int baseDamage, bool canFly, string prefabName)
+    public AI(AiCodes code, bool isFriend, bool isEnemy, int baseDamage, bool canFly, bool canMove, string prefabName)
     {
         this.code = code;
         this.isFriend = isFriend;
         this.isEnemy = isEnemy;
         this.baseDamage = baseDamage;
         this.canFly = canFly;
+        this.canMove = canMove;
         this.prefabName = prefabName;
     }
 
@@ -84,5 +86,15 @@ public class AI
     public void SetCanFly(bool canFly)
     {
         this.canFly = canFly;
+    }
+
+    public bool GetCanMove()
+    {
+        return this.canMove;
+    }
+
+    public void SetCanMove(bool canMove)
+    {
+        this.canMove = canMove;
     }
 }

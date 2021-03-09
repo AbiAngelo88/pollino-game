@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3942763972861795933}
   - component: {fileID: 3942763972861795932}
   - component: {fileID: 5007700269540660886}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chestnut
   m_TagString: Collectable
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}

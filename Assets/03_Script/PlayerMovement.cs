@@ -14,11 +14,13 @@ public class PlayerMovement : MonoBehaviour
     public static OnEnemyJump EnemyJumpEmitter;
 
     [SerializeField] private Joystick joystick;
-    [SerializeField] private float horizontalForce;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private CapsuleCollider2D wheelsCollider;
     [SerializeField] private LayerMask ground;
+    [SerializeField] private float horizontalForce = 42.2f;
+    [SerializeField] private float rotationalForce = 250f;
+    [SerializeField] private float jumpForce = 1000f;
+    [SerializeField] private float maxSpeed = 20f;
 
-    private CapsuleCollider2D wheelsCollider;
     private float horizontalMove;
     private bool isJumping = false;
     private bool isHurted = false;
@@ -112,6 +114,15 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
+    private void RotatePlayer()
+    {
+        if (horizontalMove == 0f)
+            return;
+
+        rb.AddTorque(-rotationalForce * horizontalMove * Time.deltaTime);
+    }
+
+
     private void MovePlayer()
     {
         if (isHurted)
@@ -126,10 +137,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (isJumping)
         {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.AddForce(transform.up * jumpForce);
+            rb.constraints = RigidbodyConstraints2D.None;
             isJumping = false;
         }
-        else if (horizontalMove != 0 && IsTouchingGround() && Mathf.Abs(rb.velocity.x) < 30f)
+        else if (horizontalMove != 0 && IsTouchingGround() && Mathf.Abs(rb.velocity.x) < maxSpeed)
         {
 
             if (horizontalMove < 0)
@@ -142,6 +155,10 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(Vector3.right * horizontalForce);
                 transform.localScale = new Vector2(1, 1);
             }
+        }
+        else if (!IsTouchingGround())
+        {
+            RotatePlayer();
         }
     }
 
