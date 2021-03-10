@@ -16,13 +16,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Joystick joystick;
     [SerializeField] private CapsuleCollider2D wheelsCollider;
     [SerializeField] private LayerMask ground;
-    [SerializeField] private float horizontalForce = 42.5f;
-    [SerializeField] private float rotationalForce = 250f;
+    [SerializeField] private float horizontalForce = 44f;
+    [SerializeField] private float rotationalForce = 2000f;
     [SerializeField] private float jumpForce = 1000f;
     [SerializeField] private float maxSpeed = 20f;
+    [SerializeField] private float jumpOnAIForce = 800f;
 
     private float horizontalMove;
     private bool isJumping = false;
+    private bool isJumpingOnAI = false;
     private bool isHurted = false;
     private bool isFrozen = false;
     private Rigidbody2D rb;
@@ -137,10 +139,17 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (isJumping)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.AddForce(transform.up * jumpForce);
-            rb.constraints = RigidbodyConstraints2D.None;
+            //rb.constraints = RigidbodyConstraints2D.None;
             isJumping = false;
+        }
+        else if (isJumpingOnAI)
+        {
+            //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rb.AddForce(transform.up * jumpOnAIForce);
+            //rb.constraints = RigidbodyConstraints2D.None;
+            isJumpingOnAI = false;
         }
         else if (horizontalMove != 0 && IsTouchingGround() && Mathf.Abs(rb.velocity.x) < maxSpeed)
         {
@@ -182,6 +191,13 @@ public class PlayerMovement : MonoBehaviour
         isJumping = true;
     }
 
+    public void JumpOnAI()
+    {
+        //Debug.Log("JUMP");
+        isJumpingOnAI = true;
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Friend")
@@ -194,7 +210,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentState == PlayerData.PlayerState.Fall)
         {
-            Jump();
+            JumpOnAI();
         }
         else
         {
@@ -208,7 +224,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentState == PlayerData.PlayerState.Fall)
         {
-            Jump();
+            JumpOnAI();
             EnemyJumpEmitter?.Invoke(collision.gameObject);
         }
         else
