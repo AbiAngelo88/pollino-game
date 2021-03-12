@@ -498,7 +498,8 @@ GameObject:
   - component: {fileID: 378762601807590058}
   - component: {fileID: 1514232818985384854}
   - component: {fileID: 7638650719745506131}
-  - component: {fileID: 3578128280880876830}
+  - component: {fileID: 1554842138996834525}
+  - component: {fileID: 3939882777663320934}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -555,11 +556,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
-  wheelsCollider: {fileID: 7638650719745506131}
   ground:
     serializedVersion: 2
     m_Bits: 64
-  horizontalForce: 44
+  horizontalForce: 50
   rotationalForce: 2000
   jumpForce: 1000
   maxSpeed: 20
@@ -580,8 +580,8 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.75}
   m_Size: {x: 5.3, y: 2}
   m_Direction: 1
---- !u!70 &3578128280880876830
-CapsuleCollider2D:
+--- !u!58 &1554842138996834525
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -593,9 +593,25 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000017976787, y: 0.9199803}
-  m_Size: {x: 4.876877, y: 1.6600485}
-  m_Direction: 1
+  m_Offset: {x: -1.56, y: 0.9}
+  serializedVersion: 2
+  m_Radius: 0.88
+--- !u!58 &3939882777663320934
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119746746412553148}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.56, y: 0.9}
+  serializedVersion: 2
+  m_Radius: 0.88
 --- !u!1 &2414364660172596131
 GameObject:
   m_ObjectHideFlags: 0

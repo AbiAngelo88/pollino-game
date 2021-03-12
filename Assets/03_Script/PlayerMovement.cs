@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     public static OnEnemyJump EnemyJumpEmitter;
 
     [SerializeField] private Joystick joystick;
-    [SerializeField] private CapsuleCollider2D wheelsCollider;
     [SerializeField] private LayerMask ground;
     [SerializeField] private float horizontalForce = 44f;
     [SerializeField] private float rotationalForce = 2000f;
@@ -22,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxSpeed = 20f;
     [SerializeField] private float jumpOnAIForce = 800f;
 
+    private CapsuleCollider2D wheelsTriggerCollider;
+    private CircleCollider2D backWheelCollider;
+    private CircleCollider2D frontWheelCollider;
     private float horizontalMove;
     private bool isJumping = false;
     private bool isJumpingOnAI = false;
@@ -37,9 +39,20 @@ public class PlayerMovement : MonoBehaviour
     {
         UIManager.OnRightBtnTouch += Jump;
         rb = GetComponent<Rigidbody2D>();
-        wheelsCollider = GetComponent<CapsuleCollider2D>();
+        GetColliders();
         GetAnimator();
 
+    }
+
+    private void GetColliders()
+    {
+        wheelsTriggerCollider = GetComponent<CapsuleCollider2D>();
+        CircleCollider2D[] circleColliders = gameObject.GetComponentsInChildren<CircleCollider2D>();
+        if(circleColliders != null && circleColliders.Length > 0)
+        {
+            backWheelCollider = circleColliders[0];
+            frontWheelCollider = circleColliders[1];
+        }
     }
 
     private void GetAnimator()
@@ -178,7 +191,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(transform.up * jumpOnAIForce);
             isJumpingOnAI = false;
         }
-        else if (horizontalMove != 0 && IsTouchingGround() && Mathf.Abs(rb.velocity.x) < maxSpeed)
+        else if (horizontalMove != 0 && IsTouchingGround() && Mathf.Abs(rb.velocity.x) < maxSpeed && backWheelCollider.IsTouchingLayers(ground))
         {
 
             if (horizontalMove < 0)
@@ -204,7 +217,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsTouchingGround()
     {
-        return wheelsCollider.IsTouchingLayers(ground);
+        return wheelsTriggerCollider.IsTouchingLayers(ground);
     }
 
     private  IEnumerator OnEnemyHurted() {
