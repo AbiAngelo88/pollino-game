@@ -184,12 +184,16 @@ public class PlayerMovement : MonoBehaviour
             if (horizontalMove < 0)
             {
                 rb.AddForce(Vector3.left * horizontalForce);
-                transform.localScale = new Vector2(-1, 1);
+
+                if(rb.velocity.x < 0f)
+                    transform.localScale = new Vector2(-1, 1);
             }
             else
             {
                 rb.AddForce(Vector3.right * horizontalForce);
-                transform.localScale = new Vector2(1, 1);
+
+                if (rb.velocity.x > 0f)
+                    transform.localScale = new Vector2(1, 1);
             }
         }
         else if (!IsTouchingGround())
@@ -243,7 +247,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ManageFriendCollision(Collision2D collision)
     {
-        if (currentState == PlayerData.PlayerState.Fall)
+        if (!IsTouchingGround() && rb.velocity.y < 0.1f)
         {
             JumpOnAI();
         }
@@ -257,7 +261,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ManageEnemyCollision(Collision2D collision)
     {
-        if (currentState == PlayerData.PlayerState.Fall)
+        if (!IsTouchingGround() && rb.velocity.y < 0.1f)
         {
             JumpOnAI();
             EnemyJumpEmitter?.Invoke(collision.gameObject);
