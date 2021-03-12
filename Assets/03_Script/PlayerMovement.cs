@@ -196,17 +196,17 @@ public class PlayerMovement : MonoBehaviour
 
             if (horizontalMove < 0)
             {
-                rb.AddForce(Vector3.left * horizontalForce);
+                rb.AddForce(Vector2.left * horizontalForce);
 
                 if(rb.velocity.x < 0f)
-                    transform.localScale = new Vector2(-1, 1);
+                    transform.localScale = new Vector3(-1, 1, 1);
             }
             else
             {
-                rb.AddForce(Vector3.right * horizontalForce);
+                rb.AddForce(Vector2.right * horizontalForce);
 
                 if (rb.velocity.x > 0f)
-                    transform.localScale = new Vector2(1, 1);
+                    transform.localScale = new Vector3(1, 1, 1);
             }
         }
         else if (!IsTouchingGround())
