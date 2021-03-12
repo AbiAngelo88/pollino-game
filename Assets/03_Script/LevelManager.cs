@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class LevelManager : UIManager
 {
 
-    [SerializeField] private TextMeshProUGUI pickedCollectablesText;
+    [SerializeField] private GameObject pickedCollectablesUI;
     [SerializeField] private Slider ecoPointsSlider;
     [SerializeField] private GameObject friendsContainer;
     [SerializeField] private GameObject enemiesContainer;
@@ -26,12 +26,15 @@ public class LevelManager : UIManager
     public delegate void SaveAI(GameObject ai);
     public static SaveAI SaveAIEmitter;
 
+    public delegate void HurtedPlayer(GameObject ai);
+    public static HurtedPlayer HurtedPlayerEmitter;
+
 
     private Level currentLevel;
     private Level.Difficulty difficulty;
 
     private GameObject lastHurtedFriend;
-
+    private TextMeshProUGUI pickedCollectablesText;
     // Numeriche descrittive della partita
     private int pickedCollectables = 0;
     private int ecoPoints = 0;
@@ -40,8 +43,6 @@ public class LevelManager : UIManager
     private int destroyedEnemies, savedFriends;
     private bool hasHurtedFriend = false;
     
-    
-
     private void Awake()
     {
         SetCurrentLevel();
@@ -68,6 +69,16 @@ public class LevelManager : UIManager
         GenerateCollectables();
 
         ecoPointsSlider.maxValue = totalEnemies + totalFriends;
+
+        GetCollectablesText();
+
+
+    }
+
+    private void GetCollectablesText()
+    {
+        Transform obj = pickedCollectablesUI.gameObject.transform.GetChild(0);
+        pickedCollectablesText = obj.gameObject.GetComponent<TextMeshProUGUI>();
     }
 
     private void SetCurrentLevel()
@@ -96,10 +107,25 @@ public class LevelManager : UIManager
         //}
     }
 
+    private void ManagerEcoSlider(bool gainedEcoPoints)
+    {
+        Animator anim = ecoPointsSlider.GetComponent<Animator>();
+        if (anim == null)
+            return;
+
+        if(gainedEcoPoints)
+            anim.SetTrigger("add_eco_points");
+        else
+            anim.SetTrigger("remove_eco_points");
+
+        ecoPointsSlider.value = ecoPoints;
+       
+    }
+
     private void HideControllers()
     {
         joystick.SetActive(false);
-        pickedCollectablesText.gameObject.transform.parent.gameObject.SetActive(false);
+        pickedCollectablesUI.gameObject.SetActive(false);
         ecoPointsSlider.gameObject.SetActive(false);
         jumpBtn.SetActive(false);
         pauseBtn.SetActive(false);
@@ -232,8 +258,19 @@ public class LevelManager : UIManager
     private void OnPickedCollectable(GameObject collectable)
     {
         pickedCollectables += 1;
-        pickedCollectablesText.text = pickedCollectables.ToString();
         Destroy(collectable);
+        ManageColllectablesUI();
+    }
+
+    private void ManageColllectablesUI()
+    {
+        pickedCollectablesText.text = pickedCollectables.ToString();
+        Animator anim = pickedCollectablesUI.GetComponent<Animator>();
+        if (anim == null)
+            return;
+
+        anim.SetTrigger("add_collectables");
+
     }
 
     private void OnFriendCollision(GameObject collision)
@@ -245,7 +282,8 @@ public class LevelManager : UIManager
             AI collidedAI = aiManager.GetAI();
             ecoPoints--;
             ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= (totalFriends + totalEnemies) ? (totalFriends + totalEnemies) : ecoPoints);
-            ecoPointsSlider.value = ecoPoints;
+            ManagerEcoSlider(false);
+            
             lastHurtedFriend = collision;
             hasHurtedFriend = true;
 
@@ -255,8 +293,12 @@ public class LevelManager : UIManager
 
     private void OnEnemyCollision(GameObject collision)
     {
-        pickedCollectables = 0;
-        pickedCollectablesText.text = pickedCollectables.ToString();
+        // AGGIUNGERE ANIMAZIONE CANVAS CASTAGNE.
+        pickedCollectables = pickedCollectables - 3;
+        pickedCollectables = pickedCollectables <= 0 ? 0 : pickedCollectables;
+        ManageColllectablesUI();
+
+        HurtedPlayerEmitter?.Invoke(collision);
     }
 
     private void OnEnemyJump(GameObject collision)
@@ -268,7 +310,7 @@ public class LevelManager : UIManager
             AI collidedAI = aiManager.GetAI();
             ecoPoints++;
             ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= (totalFriends + totalEnemies) ? (totalFriends + totalEnemies) : ecoPoints);
-            ecoPointsSlider.value = ecoPoints;
+            ManagerEcoSlider(true);
             destroyedEnemies++;
 
             DestroyAIEmitter?.Invoke(collision);

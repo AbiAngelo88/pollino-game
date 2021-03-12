@@ -19,6 +19,7 @@ public class AiManager : MonoBehaviour
     private Animator anim;
     private AI.AiState currentState = AI.AiState.Idle;
     private bool isDestroying = false;
+    private bool isHurtedPlayer = false;
     private bool isSaved = false;
 
     public AI GetAI()
@@ -35,6 +36,7 @@ public class AiManager : MonoBehaviour
     {
         LevelManager.DestroyAIEmitter += OnDestroyAI;
         LevelManager.SaveAIEmitter += OnSaveAI;
+        LevelManager.HurtedPlayerEmitter += OnHurtedPlayer;
         rb = GetComponent<Rigidbody2D>();
         GetAnimator();
 
@@ -58,9 +60,28 @@ public class AiManager : MonoBehaviour
         {
             currentSpeed = 0f;
             isDestroying = true;
+            Collider2D[] colliders = gameObject.GetComponentsInChildren<Collider2D>();
+            foreach(Collider2D coll in colliders)
+            {
+                Destroy(coll);
+            }
             // Attendiamo per la durata dell'animazione che dovrebbe essere di circa un secondo
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 1f);
         }
+    }
+
+    private void OnHurtedPlayer(GameObject ai)
+    {
+        if (ai.gameObject.GetInstanceID() == gameObject.GetInstanceID())
+            StartCoroutine(HurtPlayer());
+    }
+
+    private IEnumerator HurtPlayer()
+    {
+        currentSpeed = 0f;
+        isHurtedPlayer = true;
+        yield return new WaitForSeconds(.4f);
+        isHurtedPlayer = false;
     }
 
     private void OnSaveAI(GameObject ai)
@@ -87,6 +108,10 @@ public class AiManager : MonoBehaviour
         else if (isDestroying)
         {
             currentState = AI.AiState.Destroy;
+        }
+        else if (isHurtedPlayer)
+        {
+            currentState = AI.AiState.Hurted;
         }
         else if (currentSpeed > 0.1f)
         {
@@ -174,6 +199,7 @@ public class AiManager : MonoBehaviour
     {
         LevelManager.DestroyAIEmitter -= OnDestroyAI;
         LevelManager.SaveAIEmitter -= OnSaveAI;
+        LevelManager.HurtedPlayerEmitter -= OnHurtedPlayer;
     }
 
 }

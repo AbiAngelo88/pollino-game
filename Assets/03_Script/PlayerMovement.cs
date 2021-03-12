@@ -25,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalMove;
     private bool isJumping = false;
     private bool isJumpingOnAI = false;
-    private bool isHurted = false;
+    private bool isHurtedEnemy = false;
+    private bool isHurtedFriend = false;
     private bool isFrozen = false;
     private Rigidbody2D rb;
 
@@ -84,19 +85,49 @@ public class PlayerMovement : MonoBehaviour
     private void SetPlayerState()
     {
         
-        if (isHurted)
+        if (isHurtedEnemy)
         {
-            currentState = PlayerData.PlayerState.Hurted;
+            currentState = PlayerData.PlayerState.Hurted_Enemy;
+        }
+        else if (isHurtedFriend)
+        {
+            currentState = PlayerData.PlayerState.Hurted_Friend;
         }
         else if (!IsTouchingGround())
         {
+            // Caduta
             if (rb.velocity.y < 0.1f)
             {
-                currentState = PlayerData.PlayerState.Fall;
+                if (horizontalMove > 0)
+                {
+                     currentState = gameObject.transform.localScale.x > 0 ? PlayerData.PlayerState.Jump_Front : PlayerData.PlayerState.Jump_Back;
+                    
+                }
+                else if (horizontalMove < 0)
+                {
+                    currentState = gameObject.transform.localScale.x > 0 ? PlayerData.PlayerState.Jump_Back : PlayerData.PlayerState.Jump_Front;
+                }
+                else
+                {
+                    currentState = PlayerData.PlayerState.Fall;
+                }
             }
             else
             {
-                currentState = PlayerData.PlayerState.Jump;
+                // Stacco
+                if(horizontalMove > 0)
+                {
+                    currentState = gameObject.transform.localScale.x > 0 ? PlayerData.PlayerState.Jump_Front : PlayerData.PlayerState.Jump_Back;
+                }
+                else if(horizontalMove < 0)
+                {
+                    currentState = gameObject.transform.localScale.x > 0 ? PlayerData.PlayerState.Jump_Back : PlayerData.PlayerState.Jump_Front;
+                }
+                else
+                {
+                    currentState = PlayerData.PlayerState.Jump;
+                }
+                
             }
         }
         else if (Mathf.Abs(horizontalMove) > 0.1f)
@@ -127,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (isHurted)
+        if (isHurtedEnemy || isHurtedFriend)
         {
             // In questo modo evito di attivare più volte 
             if(!isFrozen)
@@ -139,16 +170,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (isJumping)
         {
-            //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.AddForce(transform.up * jumpForce);
-            //rb.constraints = RigidbodyConstraints2D.None;
             isJumping = false;
         }
         else if (isJumpingOnAI)
         {
-            //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.AddForce(transform.up * jumpOnAIForce);
-            //rb.constraints = RigidbodyConstraints2D.None;
             isJumpingOnAI = false;
         }
         else if (horizontalMove != 0 && IsTouchingGround() && Mathf.Abs(rb.velocity.x) < maxSpeed)
@@ -176,14 +203,22 @@ public class PlayerMovement : MonoBehaviour
         return wheelsCollider.IsTouchingLayers(ground);
     }
 
-    private  IEnumerator Hurt() {
+    private  IEnumerator OnEnemyHurted() {
         //Debug.Log("HURT");
-        isHurted = true;
+        isHurtedEnemy = true;
         isFrozen = false;
         yield return new WaitForSeconds(.5f);
-        isHurted = false;
+        isHurtedEnemy = false;
     }
 
+    private IEnumerator OnFriendHurted()
+    {
+        //Debug.Log("HURT");
+        isHurtedFriend = true;
+        isFrozen = false;
+        yield return new WaitForSeconds(.5f);
+        isHurtedFriend = false;
+    }
 
     public void Jump()
     {
@@ -214,7 +249,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            StartCoroutine(Hurt());
+            StartCoroutine(OnFriendHurted());
         }
 
         FriendCollisionEmitter?.Invoke(collision.gameObject);
@@ -229,7 +264,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            StartCoroutine(Hurt());
+            StartCoroutine(OnEnemyHurted());
             EnemyCollisionEmitter?.Invoke(collision.gameObject);
         }
     }
