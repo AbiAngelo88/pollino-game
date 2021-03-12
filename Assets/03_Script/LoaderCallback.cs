@@ -12,7 +12,7 @@ public class LoaderCallback : MonoBehaviour
         if(isFirstUpdate)
         {
             isFirstUpdate = false;
-            Loader.loaderCallback();
+            Loader.LoaderCallback();
         }
     }
 }

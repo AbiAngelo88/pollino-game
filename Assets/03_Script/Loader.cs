@@ -27,7 +27,7 @@ public static class Loader
     // Il modo giusto per usare loadAsync è la coroutine.
     // Per startare una coroutine però è necessario associare una istanza di uno script che estende monobehaviour
     // Per questio creiamo un oggetto dummy
-    private static IEnumerator loadSceneAsync(Scene scene)
+    private static IEnumerator LoadSceneAsync(Scene scene)
     {
 
         loadingProgress = 0f;
@@ -38,13 +38,12 @@ public static class Loader
         while (!loadingAsyncOperation.isDone)
         {
             loadingProgress = Mathf.Clamp01(loadingAsyncOperation.progress / 0.9f);
-            Debug.Log(loadingProgress);
             // Fino a che l'operazione di caricamento della scena non è completo non si mostra la nuova scena
             yield return null;
         }
     }
 
-    public static float getLoadingProgress()
+    public static float GetLoadingProgress()
     {
         return loadingProgress;
     }
@@ -66,7 +65,7 @@ public static class Loader
             // Funzione che crea un GameObject dummy che estenda MonoBehaviour altrimenti non si può usare la coroutine
             GameObject dummy = new GameObject("Loading Game object");
 
-            dummy.AddComponent<LoadingMonoBehaviour>().StartCoroutine(loadSceneAsync(scene));
+            dummy.AddComponent<LoadingMonoBehaviour>().StartCoroutine(LoadSceneAsync(scene));
         };
 
         yield return null;
@@ -80,7 +79,7 @@ public static class Loader
 
 
     // Funzione richiamata al primo frame di update dal GameObject LoaderCallback all'interno della loadingScene.
-    public static void loaderCallback()
+    public static void LoaderCallback()
     {
         if(onLoaderCallback != null)
         {

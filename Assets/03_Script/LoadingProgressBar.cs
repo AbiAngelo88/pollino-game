@@ -14,7 +14,7 @@ public class LoadingProgressBar : MonoBehaviour
 
     private void Update()
     {
-        slider.value = Loader.getLoadingProgress();
+        slider.value = Loader.GetLoadingProgress();
     }
 
 }
