@@ -6,8 +6,7 @@ using UnityEngine.Audio;
 public class PersistentDataManager : MonoBehaviour
 {
     private PlayerData currentPlayer;
-    private AudioSource audioSource;
-    [SerializeField] private AudioMixer audioMixer;
+    
     private bool isMobile = false;
 
     public static PersistentDataManager Instance { get; private set; }
@@ -45,21 +44,16 @@ public class PersistentDataManager : MonoBehaviour
         Debug.Log("IS MOBILE " + Application.isMobilePlatform);
 
         this.currentPlayer = PlayerSaver.Load();
-        OnVolumeChange(currentPlayer.GetVolume());
+        
     }
 
     void Start()
     {
         PlayerSaver.OnLoadedPlayer += OnPlayerDataChange;
         PlayerSaver.OnPlayerSaved += OnPlayerDataChange;
-        MenuSceneManager.VolumeChangeEmitter += OnVolumeChange;
-        audioSource = GetComponent<AudioSource>();
+        
     }
 
-    private void OnVolumeChange(float volume)
-    {
-        audioMixer.SetFloat("volume", volume);
-    }
 
     public bool IsMobileDevice()
     {
@@ -81,7 +75,6 @@ public class PersistentDataManager : MonoBehaviour
     {
         PlayerSaver.OnLoadedPlayer -= OnPlayerDataChange;
         PlayerSaver.OnPlayerSaved -= OnPlayerDataChange;
-        MenuSceneManager.VolumeChangeEmitter -= OnVolumeChange;
     }
 
 }
