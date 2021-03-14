@@ -2281,6 +2281,18 @@ MonoBehaviour:
     name: 18
   - audioClip: {fileID: 8300000, guid: 36bf977ee54d44479b9f6c4ce9c1db36, type: 3}
     name: 19
+  - audioClip: {fileID: 8300000, guid: ca8ef5762e6894389beda64fb9f385ec, type: 3}
+    name: 5
+  - audioClip: {fileID: 8300000, guid: 9f6b7c86dc35b45fe9561296015480a6, type: 3}
+    name: 6
+  - audioClip: {fileID: 8300000, guid: 401ea794a1e5841e1b8bb6821058437e, type: 3}
+    name: 8
+  - audioClip: {fileID: 8300000, guid: 29a5c06744ede474fb0bb4a45db24e22, type: 3}
+    name: 14
+  - audioClip: {fileID: 8300000, guid: d9c19945d16ed443d932301a747bea8c, type: 3}
+    name: 7
+  - audioClip: {fileID: 8300000, guid: 8a58e5392eb7543ec97ea3ac81036e86, type: 3}
+    name: 9
 --- !u!114 &1153017366
 MonoBehaviour:
   m_ObjectHideFlags: 0
