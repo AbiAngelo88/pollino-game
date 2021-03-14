@@ -3643,7 +3643,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251501311}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &251501313
 Camera:
   m_ObjectHideFlags: 0
@@ -22224,6 +22224,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1093508687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2119746746412553148, guid: eaa09784526056140b1c24411d3ca1b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1211445136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &1093508688
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093508687}
+  m_Enabled: 1
 --- !u!1 &1098689489
 GameObject:
   m_ObjectHideFlags: 0

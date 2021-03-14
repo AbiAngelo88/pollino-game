@@ -193,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (horizontalMove != 0 && IsTouchingGround() && Mathf.Abs(rb.velocity.x) < maxSpeed && backWheelCollider.IsTouchingLayers(ground))
         {
-
+            AudioHelper.PlayOneShotSound(AudioHelper.Sounds.Fargo);
             if (horizontalMove < 0)
             {
                 rb.AddForce(Vector2.left * horizontalForce);

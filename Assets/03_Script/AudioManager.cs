@@ -10,14 +10,15 @@ public class AudioManager: MonoBehaviour
     private AudioSource backGroundAudioSource;
     private AudioMixerGroup masterAudioMixer;
 
-    //private Dictionary<Sound, AudioClip> 
-
     private void Awake()
     {
         InitializeAudioMixer();
         InitializeBackgroundAudioSource();
+        //PlayBackGroundMusic();
         MenuSceneManager.VolumeChangeEmitter += OnVolumeChange;
         AudioHelper.PlayOneShotEmitter += PlayOneShotSound;
+        AudioHelper.PlayBackGroundEmitter += PlayBackGroundMusic;
+        AudioHelper.PauseBackGroundEmitter += PauseBackGroundMusic;
     }
 
     private void InitializeAudioMixer()
@@ -34,6 +35,8 @@ public class AudioManager: MonoBehaviour
         if (backGroundAudioSource == null)
         {
             backGroundAudioSource = gameObject.AddComponent<AudioSource>();
+            backGroundAudioSource.playOnAwake = true;
+            backGroundAudioSource.loop = true;
             backGroundAudioSource.outputAudioMixerGroup = masterAudioMixer;
         }
     }
@@ -48,12 +51,23 @@ public class AudioManager: MonoBehaviour
         audioMixer.SetFloat("volume", volume);
     }
 
-    public void PlayOneShotSound(Sound.Sounds name)
+    private void PlayBackGroundMusic(AudioHelper.Sounds name)
+    {
+        backGroundAudioSource.clip = GetAudioClip(name);
+        backGroundAudioSource.Play();
+    }
+
+    private void PauseBackGroundMusic()
+    {
+        backGroundAudioSource.Pause();
+    }
+
+    public void PlayOneShotSound(AudioHelper.Sounds name)
     {
         StartCoroutine(PlayOneShot(name));
     }
 
-    private IEnumerator PlayOneShot(Sound.Sounds name)
+    private IEnumerator PlayOneShot(AudioHelper.Sounds name)
     {
         AudioSource audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.outputAudioMixerGroup = masterAudioMixer;
@@ -62,7 +76,7 @@ public class AudioManager: MonoBehaviour
         Destroy(audioSource);
     } 
 
-    private AudioClip GetAudioClip(Sound.Sounds name)
+    private AudioClip GetAudioClip(AudioHelper.Sounds name)
     {
         if(sounds == null || sounds.Count == 0)
         {
@@ -87,5 +101,7 @@ public class AudioManager: MonoBehaviour
     {
         MenuSceneManager.VolumeChangeEmitter -= OnVolumeChange;
         AudioHelper.PlayOneShotEmitter -= PlayOneShotSound;
+        AudioHelper.PlayBackGroundEmitter -= PlayBackGroundMusic;
+        AudioHelper.PauseBackGroundEmitter -= PauseBackGroundMusic;
     }
 }

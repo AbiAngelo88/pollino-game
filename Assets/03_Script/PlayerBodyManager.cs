@@ -25,7 +25,7 @@ public class PlayerBodyManager : MonoBehaviour
         {
             case "Collectable":
                 PickedCollectableEmitter?.Invoke(collision.gameObject);
-                AudioHelper.PlayOneShotSound(Sound.Sounds.Fargo);
+                AudioHelper.PlayOneShotSound(AudioHelper.Sounds.Fargo);
                 break;
             case "Defeat":
                 DefeatLevelEmitter?.Invoke();
