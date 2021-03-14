@@ -13,8 +13,8 @@ public class AudioHelper
         CyclistRun, CyclistJump,
         PyromaniacHurt, PyromaniacDestroy,
         FriendSave,
-        BoarDestroy, FoxDestroy,
-        Wind, Water, Birds
+        AiDestroy,
+        Wind, Water, Birds, Fox, Boar
     }
 
     public delegate void PlaySound(Sounds name);
@@ -26,11 +26,15 @@ public class AudioHelper
 
 
     private static Dictionary<Sounds, float> delayedSounds = new Dictionary<Sounds, float>() {
-        { Sounds.Fargo, 0.5f }
+        { Sounds.CyclistRun, 0.5f }
     };
 
     private static Dictionary<Sounds, float> timeCounter = new Dictionary<Sounds, float>();
 
+    public static void PlayBackGroundMusic(Sounds name)
+    {
+        PlayBackGroundEmitter?.Invoke(name);
+    }
 
     public static void PlayOneShotSound(Sounds name)
     {

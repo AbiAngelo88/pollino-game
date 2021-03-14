@@ -47,7 +47,7 @@ public class EndLevelUIManager : UIManager
         // Animazione slider
         for (int i = ecoScore; i >= 0; i--)
         {
-            yield return new WaitForSeconds(.01f);
+            yield return new WaitForSeconds(.1f);
             ecoSlider.value = i;
         }
         
@@ -60,6 +60,7 @@ public class EndLevelUIManager : UIManager
             {
                 GameObject t = trophies[i].transform.GetChild(0).gameObject;
                 t.GetComponent<Animator>().Play("Trophy_Idle");
+                AudioHelper.PlayOneShotSound(AudioHelper.Sounds.Trophey);
             }
         }
     }

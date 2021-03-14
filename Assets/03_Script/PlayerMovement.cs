@@ -193,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (horizontalMove != 0 && IsTouchingGround() && Mathf.Abs(rb.velocity.x) < maxSpeed && backWheelCollider.IsTouchingLayers(ground))
         {
-            AudioHelper.PlayOneShotSound(AudioHelper.Sounds.Fargo);
+            AudioHelper.PlayOneShotSound(AudioHelper.Sounds.CyclistRun);
             if (horizontalMove < 0)
             {
                 rb.AddForce(Vector2.left * horizontalForce);
@@ -240,6 +240,7 @@ public class PlayerMovement : MonoBehaviour
     public void Jump()
     {
         //Debug.Log("JUMP");
+        AudioHelper.PlayOneShotSound(AudioHelper.Sounds.CyclistJump);
         isJumping = true;
     }
 

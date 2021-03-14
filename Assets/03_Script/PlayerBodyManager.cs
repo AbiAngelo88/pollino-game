@@ -25,13 +25,15 @@ public class PlayerBodyManager : MonoBehaviour
         {
             case "Collectable":
                 PickedCollectableEmitter?.Invoke(collision.gameObject);
-                AudioHelper.PlayOneShotSound(AudioHelper.Sounds.Fargo);
+                AudioHelper.PlayOneShotSound(AudioHelper.Sounds.PickedChestnut);
                 break;
             case "Defeat":
                 DefeatLevelEmitter?.Invoke();
+                AudioHelper.PlayOneShotSound(AudioHelper.Sounds.Loose);
                 break;
             case "Win":
                 WinLevelEmitter?.Invoke();
+                AudioHelper.PlayOneShotSound(AudioHelper.Sounds.Win);
                 break;
             default:
                 break;

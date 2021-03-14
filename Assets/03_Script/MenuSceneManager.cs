@@ -25,7 +25,8 @@ public class MenuSceneManager : CoreSceneManager
 
     public override void Start()
     {
-        base.Start();   
+        base.Start();
+        AudioHelper.PlayBackGroundMusic(AudioHelper.Sounds.Menu);
         OnPlayerDataChange(PersistentDataManager.Instance.GetCurrentPlayerData());
         PlayerSaver.OnPlayerSaved += OnPlayerDataChange;
     }
@@ -82,6 +83,7 @@ public class MenuSceneManager : CoreSceneManager
     {
         this.volume = value;
         VolumeChangeEmitter?.Invoke(this.volume);
+        AudioHelper.PlayOneShotSound(AudioHelper.Sounds.VolumeChange);
     }
 
     public void SaveNickname()

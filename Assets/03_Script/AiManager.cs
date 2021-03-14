@@ -66,6 +66,7 @@ public class AiManager : MonoBehaviour
                 Destroy(coll);
             }
             // Attendiamo per la durata dell'animazione che dovrebbe essere di circa un secondo
+            AudioHelper.PlayOneShotSound(AudioHelper.Sounds.AiDestroy);
             Destroy(gameObject, 1f);
         }
     }
@@ -91,6 +92,7 @@ public class AiManager : MonoBehaviour
         {
             currentSpeed = 0f;
             isSaved = true;
+            AudioHelper.PlayOneShotSound(AudioHelper.Sounds.FriendSave);
             // Attendiamo per la durata dell'animazione che dovrebbe essere di circa un secondo
             Destroy(gameObject, 0.5f);
         }

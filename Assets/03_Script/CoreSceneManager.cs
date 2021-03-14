@@ -23,7 +23,7 @@ public class CoreSceneManager : MonoBehaviour
         {
             foreach(Button button in buttons)
             {
-                button.onClick.AddListener(() => AudioHelper.PlayOneShotSound(AudioHelper.Sounds.Fargo));
+                button.onClick.AddListener(() => AudioHelper.PlayOneShotSound(AudioHelper.Sounds.ButtonClick));
             }
         }
         else

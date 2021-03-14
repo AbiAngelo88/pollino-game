@@ -302,7 +302,6 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
-  m_ShouldActivateOnSelect: 1
 --- !u!114 &397981955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2278,9 +2277,9 @@ MonoBehaviour:
   - audioClip: {fileID: 8300000, guid: cef84b4a29b0842d89ee3828dd8b5a24, type: 3}
     name: 17
   - audioClip: {fileID: 8300000, guid: f3756ff0721ae4f529d058ae0dab2360, type: 3}
-    name: 18
+    name: 17
   - audioClip: {fileID: 8300000, guid: 36bf977ee54d44479b9f6c4ce9c1db36, type: 3}
-    name: 19
+    name: 18
   - audioClip: {fileID: 8300000, guid: ca8ef5762e6894389beda64fb9f385ec, type: 3}
     name: 5
   - audioClip: {fileID: 8300000, guid: 9f6b7c86dc35b45fe9561296015480a6, type: 3}
@@ -2293,6 +2292,14 @@ MonoBehaviour:
     name: 7
   - audioClip: {fileID: 8300000, guid: 8a58e5392eb7543ec97ea3ac81036e86, type: 3}
     name: 9
+  - audioClip: {fileID: 8300000, guid: 64aa2573f419a4918b3a824d9d9e52ec, type: 3}
+    name: 15
+  - audioClip: {fileID: 8300000, guid: 7131dcead46f44df983a9e59c7c8054b, type: 3}
+    name: 2
+  - audioClip: {fileID: 8300000, guid: 57753b9d53add47f8ba0f1561fc8fdb8, type: 3}
+    name: 20
+  - audioClip: {fileID: 8300000, guid: 41aba4bc984a248ce9a839d54e4251df, type: 3}
+    name: 19
 --- !u!114 &1153017366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4437,7 +4444,6 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
-  m_ShouldActivateOnSelect: 1
 --- !u!114 &1875280387
 MonoBehaviour:
   m_ObjectHideFlags: 0
