@@ -302,6 +302,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
+  m_ShouldActivateOnSelect: 1
 --- !u!114 &397981955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2264,8 +2265,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: f4a0843199efbe9439228638674a5a2b, type: 2}
   sounds:
-  - audioClip: {fileID: 8300000, guid: 50fe69cc9343d5c4f988d06ddbac875a, type: 3}
-    name: 0
+  - audioClip: {fileID: 8300000, guid: 7131dcead46f44df983a9e59c7c8054b, type: 3}
+    name: 1
+  - audioClip: {fileID: 8300000, guid: 7bb862eba399b457e8bcdd6cd56c4b6a, type: 3}
+    name: 3
+  - audioClip: {fileID: 8300000, guid: d9c19945d16ed443d932301a747bea8c, type: 3}
+    name: 4
+  - audioClip: {fileID: 8300000, guid: 5b841cb018baa4cc8b307224d0e7888d, type: 3}
+    name: 10
+  - audioClip: {fileID: 8300000, guid: c17095997e4d944bd9da74df534ab7ea, type: 3}
+    name: 11
+  - audioClip: {fileID: 8300000, guid: cef84b4a29b0842d89ee3828dd8b5a24, type: 3}
+    name: 17
+  - audioClip: {fileID: 8300000, guid: f3756ff0721ae4f529d058ae0dab2360, type: 3}
+    name: 18
+  - audioClip: {fileID: 8300000, guid: 36bf977ee54d44479b9f6c4ce9c1db36, type: 3}
+    name: 19
 --- !u!114 &1153017366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4410,6 +4425,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
+  m_ShouldActivateOnSelect: 1
 --- !u!114 &1875280387
 MonoBehaviour:
   m_ObjectHideFlags: 0
