@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
-public class LevelManager : UIManager
+public class LevelManager : CoreSceneManager
 {
 
     [SerializeField] private GameObject pickedCollectablesUI;
@@ -42,17 +42,19 @@ public class LevelManager : UIManager
     private int totalCollectables, totalFriends, totalEnemies;
     private int destroyedEnemies, savedFriends;
     private bool hasHurtedFriend = false;
-    
-    private void Awake()
+
+    public override void Awake()
     {
+        base.Awake();
         SetCurrentLevel();
     }
 
-    void Start()
+    public override void Start()
     {
+        base.Start();
+
         PlayerBodyManager.PickedCollectableEmitter += OnPickedCollectable;
         PlayerBodyManager.WinLevelEmitter += OnWinLevel;
-        PlayerBodyManager.DefeatLevelEmitter += RestartLevel;
         PlayerBodyManager.ClimbOverFriendEmitter += OnClimbOverFriend;
         PlayerMovement.FriendCollisionEmitter += OnFriendCollision;
         PlayerMovement.EnemyCollisionEmitter += OnEnemyCollision;
@@ -401,7 +403,6 @@ public class LevelManager : UIManager
     {
         PlayerBodyManager.PickedCollectableEmitter -= OnPickedCollectable;
         PlayerBodyManager.WinLevelEmitter -= OnWinLevel;
-        PlayerBodyManager.DefeatLevelEmitter -= RestartLevel;
         PlayerBodyManager.ClimbOverFriendEmitter -= OnClimbOverFriend;
         PlayerMovement.FriendCollisionEmitter -= OnFriendCollision;
         PlayerMovement.EnemyCollisionEmitter -= OnEnemyCollision;

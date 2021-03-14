@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuSceneManager : MonoBehaviour
+public class MenuSceneManager : CoreSceneManager
 {
     [SerializeField] private GameObject menuContainer;
     [SerializeField] private GameObject firstGameCanvas;
@@ -18,9 +18,14 @@ public class MenuSceneManager : MonoBehaviour
 
     private float volume;
 
-    void Start()
+    public override void Awake()
     {
+        base.Awake();
+    }
 
+    public override void Start()
+    {
+        base.Start();   
         OnPlayerDataChange(PersistentDataManager.Instance.GetCurrentPlayerData());
         PlayerSaver.OnPlayerSaved += OnPlayerDataChange;
     }

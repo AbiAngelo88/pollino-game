@@ -11,6 +11,11 @@ public class UIManager : MonoBehaviour
     public delegate void PauseClick();
     public static event PauseClick PauseClickEmitter;
 
+    private void Start()
+    {
+        PlayerBodyManager.DefeatLevelEmitter += RestartLevel;
+    }
+
     public void QuitGame()
     {
         Debug.Log("QUIT");
@@ -42,6 +47,11 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         Loader.loadScene(Loader.Scene.MenuScene);
+    }
+
+    private void OnDestroy()
+    {
+        PlayerBodyManager.DefeatLevelEmitter -= RestartLevel;
     }
 
 }

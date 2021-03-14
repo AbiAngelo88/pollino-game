@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Friend
   - Enemy
+  - Button
   layers:
   - Default
   - TransparentFX
