@@ -40819,12 +40819,12 @@ PrefabInstance:
     - target: {fileID: 6456425773766922621, guid: 54d142297d3ec7c43b295d2a5fb7f022,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6456425774093557522, guid: 54d142297d3ec7c43b295d2a5fb7f022,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6456425774483819608, guid: 54d142297d3ec7c43b295d2a5fb7f022,
         type: 3}
