@@ -14,7 +14,7 @@ public class AudioHelper
         PyromaniacHurt, PyromaniacDestroy,
         FriendSave,
         AiDestroy,
-        Wind, Water, Birds, Fox, Boar
+        Wind, Water, Birds, Fox, Boar, CyclistHurt
     }
 
     public delegate void PlaySound(Sounds name);

@@ -288,7 +288,7 @@ public class LevelManager : CoreSceneManager
             
             lastHurtedFriend = collision;
             hasHurtedFriend = true;
-
+            AudioHelper.PlayOneShotSound(AudioHelper.Sounds.CyclistHurt);
             DestroyAIEmitter?.Invoke(collision);
         }
     }
@@ -299,7 +299,7 @@ public class LevelManager : CoreSceneManager
         pickedCollectables = pickedCollectables - 3;
         pickedCollectables = pickedCollectables <= 0 ? 0 : pickedCollectables;
         ManageColllectablesUI();
-
+        AudioHelper.PlayOneShotSound(AudioHelper.Sounds.CyclistHurt);
         HurtedPlayerEmitter?.Invoke(collision);
     }
 
@@ -314,7 +314,7 @@ public class LevelManager : CoreSceneManager
             ecoPoints = ecoPoints <= 0 ? 0 : (ecoPoints >= (totalFriends + totalEnemies) ? (totalFriends + totalEnemies) : ecoPoints);
             ManagerEcoSlider(true);
             destroyedEnemies++;
-
+            AudioHelper.PlayOneShotSound(AudioHelper.Sounds.PyromaniacDestroy);
             DestroyAIEmitter?.Invoke(collision);
         }
     }
