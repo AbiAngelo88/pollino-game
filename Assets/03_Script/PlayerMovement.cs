@@ -15,10 +15,11 @@ public class PlayerMovement : MonoBehaviour
 
     public Joystick joystick;
     [SerializeField] private LayerMask ground;
-    [SerializeField] private float horizontalForce = 44f;
+    [SerializeField] private float horizontalForce = 44F;
+    [SerializeField] private float onAirHorizontalForce = 12F;
     [SerializeField] private float rotationalForce = 2000f;
     [SerializeField] private float jumpForce = 1000f;
-    [SerializeField] private float maxSpeed = 20f;
+    [SerializeField] private float maxSpeed = 15F;
     [SerializeField] private float jumpOnAIForce = 800f;
 
     private CapsuleCollider2D wheelsTriggerCollider;
@@ -221,6 +222,11 @@ public class PlayerMovement : MonoBehaviour
         else if (!IsTouchingGround())
         {
             RotatePlayer();
+            if (horizontalMove < 0)
+                rb.AddForce(Vector2.left * onAirHorizontalForce);
+            else if(horizontalMove > 0)
+                rb.AddForce(Vector2.right * onAirHorizontalForce);
+
         }
     }
 
