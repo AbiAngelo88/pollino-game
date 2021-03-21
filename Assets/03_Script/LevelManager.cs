@@ -59,7 +59,7 @@ public class LevelManager : CoreSceneManager
         PlayerMovement.FriendCollisionEmitter += OnFriendCollision;
         PlayerMovement.EnemyCollisionEmitter += OnEnemyCollision;
         PlayerMovement.EnemyJumpEmitter += OnEnemyJump;
-        ManageCorrectInteractions();
+        //ManageCorrectInteractions();
 
         // Generiamo le AI amiche
         GenerateAI(friendsContainer);

@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public static OnEnemyCollision EnemyCollisionEmitter;
     public static OnEnemyJump EnemyJumpEmitter;
 
-    [SerializeField] private Joystick joystick;
+    public Joystick joystick;
     [SerializeField] private LayerMask ground;
     [SerializeField] private float horizontalForce = 44f;
     [SerializeField] private float rotationalForce = 2000f;
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        UIManager.OnRightBtnTouch += Jump;
+        UIManager.OnRightBtnTouch += OnRightBtnClick;
         rb = GetComponent<Rigidbody2D>();
         GetColliders();
         GetAnimator();
@@ -82,6 +82,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    private void OnRightBtnClick()
+    {
+        if (IsTouchingGround())
+        {
+            Jump();
+        }
+
+    }
+
+
     private void GetHorizontalMove()
     {
         if (PersistentDataManager.Instance != null && PersistentDataManager.Instance.IsMobileDevice())
@@ -92,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalMove = Input.GetAxisRaw("Horizontal");
         }
-
     }
 
     private void SetPlayerState()
@@ -289,6 +298,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        UIManager.OnRightBtnTouch -= Jump;
+        UIManager.OnRightBtnTouch -= OnRightBtnClick;
     }
 }
